@@ -84,6 +84,14 @@ p { color: var(--muted); }
 .cards article img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
 .cards article a { font-weight: 900; color: var(--pink); }
 
+
+.earnings { background: #fff; }
+.earnings-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; }
+.earnings-grid article { padding: 24px; background: #fbfcff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
+.earnings-grid article.featured { background: var(--yellow); border-color: #e6b900; }
+.earnings-grid span { display: block; margin-bottom: 10px; color: #b92d45; font-weight: 900; text-transform: uppercase; }
+.earnings-grid strong { display: block; margin-bottom: 12px; color: var(--dark); font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: .9; }
+.earnings-grid p { margin-bottom: 0; }
 .steps { background: #fff4bd; }
 .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .step-grid article { padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
@@ -117,7 +125,7 @@ input { min-height: 48px; padding: 12px 14px; border: 1px solid #d8deea; border-
 }
 @media (max-width: 900px) {
   .hero, .service-detail, .register, .commission { grid-template-columns: 1fr; }
-  .benefit-band, .trust-grid, .step-grid { grid-template-columns: 1fr 1fr; }
+  .benefit-band, .trust-grid, .step-grid, .earnings-grid { grid-template-columns: 1fr 1fr; }
   .big-number { font-size: 6rem; }
   .nav { display: none; position: absolute; left: 18px; right: 18px; top: 100%; flex-direction: column; align-items: stretch; padding: 10px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
   .nav.is-open { display: flex; }
@@ -126,8 +134,9 @@ input { min-height: 48px; padding: 12px 14px; border: 1px solid #d8deea; border-
 }
 @media (max-width: 620px) {
   h1 { font-size: 2.25rem; }
-  .grid.five, .benefit-band, .trust-grid, .step-grid, .brand-list { grid-template-columns: 1fr; }
+  .grid.five, .benefit-band, .trust-grid, .step-grid, .earnings-grid, .brand-list { grid-template-columns: 1fr; }
   .hero-actions { display: grid; }
   .btn { width: 100%; }
   .brand img { width: 140px; }
 }
+
