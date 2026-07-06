@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Material gratuito">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5f6f9"/>
+      <stop offset="1" stop-color="#e4e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="36" fill="url(#g)"/>
+  <rect x="74" y="74" width="1052" height="652" rx="24" fill="none" stroke="#aeb7c7" stroke-width="5" stroke-dasharray="24 18"/>
+  <circle cx="260" cy="275" r="72" fill="#ffcc14" opacity=".24"/>
+  <path d="M185 545l188-190 132 132 96-96 230 154H185z" fill="#ffcc14" opacity=".22"/>
+  <text x="600" y="330" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800" fill="#4f5b70">Material gratuito</text>
+  <text x="600" y="405" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#737f93">Imagen pendiente</text>
+  <text x="600" y="455" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#737f93">Sugerido: 1200 x 800</text>
+</svg>
