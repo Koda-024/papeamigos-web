@@ -4,7 +4,8 @@ const nav = document.querySelector("[data-nav]");
 const whatsappLink = document.querySelector("[data-whatsapp-link]");
 const leadForm = document.querySelector("[data-lead-form]");
 function wa(message) { return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`; }
-if (whatsappLink) whatsappLink.href = wa("Hola, quiero registrarme en Papeamigos.");
+if (whatsappLink) { whatsappLink.href = wa("Hola, quiero registrarme en Papeamigos."); whatsappLink.target = "_blank"; whatsappLink.rel = "noopener"; }
 if (menuToggle && nav) menuToggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); menuToggle.setAttribute("aria-expanded", String(open)); });
 if (leadForm) leadForm.addEventListener("submit", (event) => { event.preventDefault(); const data = new FormData(leadForm); const msg = [`Hola, quiero registrarme en Papeamigos.`, `Nombre: ${data.get("nombre") || ""}`, `Negocio: ${data.get("negocio") || ""}`, `Teléfono: ${data.get("telefono") || ""}`, `Ciudad: ${data.get("ciudad") || ""}`].join("\n"); window.open(wa(msg), "_blank", "noopener"); });
+
 
