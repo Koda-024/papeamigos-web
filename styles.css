@@ -117,11 +117,11 @@ p { color: var(--muted); }
 .logo-marquee { overflow-x: auto; overflow-y: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fbfcff; cursor: grab; scrollbar-width: none; }
 .logo-marquee::-webkit-scrollbar { display: none; }
 .logo-marquee.is-dragging { cursor: grabbing; }
-.logo-track { display: flex; width: max-content; gap: 14px; padding: 18px 14px; animation: logo-scroll 55s linear infinite; }
-.logo-track span { user-select: none; -webkit-user-select: none; display: inline-flex; align-items: center; justify-content: center; min-width: 180px; height: 82px; padding: 12px 22px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 8px 20px rgba(23, 32, 51, .06); }
-.logo-track img { pointer-events: none; user-select: none; -webkit-user-drag: none; max-width: 150px; max-height: 62px; width: auto; height: auto; object-fit: contain; }
-@keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.logo-marquee:hover .logo-track, .logo-marquee.is-dragging .logo-track { animation-play-state: paused; }
+.logo-track { display: flex; width: max-content; gap: 34px; padding: 18px 20px; animation: logo-scroll 38s linear infinite; }
+.logo-track span { user-select: none; -webkit-user-select: none; display: inline-flex; align-items: center; justify-content: center; min-width: 150px; height: 74px; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.logo-track img { pointer-events: none; user-select: none; -webkit-user-drag: none; max-width: 150px; max-height: 64px; width: auto; height: auto; object-fit: contain; }
+@keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } } to { transform: translateX(-50%); } }
+.logo-marquee:hover .logo-track, .logo-marquee.is-dragging .logo-track { display: flex; width: max-content; gap: 34px; padding: 18px 20px; animation: logo-scroll 38s linear infinite; }
 .intro { background: #fff; text-align: center; }
 .intro p { max-width: 900px; margin: 0 auto 24px; }
 .trust-section { background: #fbfcff; }
@@ -217,6 +217,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
 
 
 
