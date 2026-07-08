@@ -55,11 +55,11 @@ p { color: var(--muted); }
 .hero-slider {
   position: relative;
   overflow: hidden;
-  padding: 22px clamp(14px, 4vw, 54px) 34px;
-  background: linear-gradient(135deg, #ffcc14 0%, #ffcc14 42%, #f57691 42%, #f57691 100%);
+  padding: 0;
+  background: #fff;
   border-bottom: 1px solid var(--line);
 }
-.slider-track { position: relative; width: min(100%, 1380px); aspect-ratio: 16 / 9; max-height: 620px; min-height: 340px; margin: 0 auto; background: transparent; }
+.slider-track { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 620px; min-height: 340px; margin: 0 auto; background: #fff; }
 .slider-slide {
   position: absolute;
   inset: 0;
@@ -68,7 +68,7 @@ p { color: var(--muted); }
   transition: opacity .45s ease, visibility .45s ease;
 }
 .slider-slide.is-active { opacity: 1; visibility: visible; }
-.slider-slide img { width: 100%; height: 100%; object-fit: contain; object-position: center; background: transparent; }
+.slider-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; background: #fff; }
 .slider-register { position: absolute; left: clamp(24px, 5vw, 70px); bottom: clamp(24px, 4vw, 48px); z-index: 2; }
 .slider-control {
   position: absolute;
@@ -240,3 +240,4 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 @keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-marquee:hover .logo-track, .logo-marquee.is-dragging .logo-track { animation-play-state: paused; }
+
