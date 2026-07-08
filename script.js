@@ -17,3 +17,10 @@ if (leadForm) leadForm.addEventListener("submit", (event) => { event.preventDefa
 const closeRegister = document.querySelector('[data-close-register]');
 if (closeRegister) closeRegister.addEventListener('click', () => { window.close(); setTimeout(() => { window.location.href = '../'; }, 150); });
 
+
+document.querySelectorAll('.section, .benefit-band, .hero').forEach(el => el.classList.add('reveal'));
+const revealItems = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }), { threshold: .14 });
+revealItems.forEach(el => revealObserver.observe(el));
+if (nav && menuToggle) nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('is-open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
+
