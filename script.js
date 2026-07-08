@@ -50,3 +50,26 @@ if (slider) {
   slider.addEventListener('mouseleave', () => show(current));
   show(0);
 }
+const logoMarquee = document.querySelector('.logo-marquee');
+if (logoMarquee) {
+  let dragging = false;
+  let startX = 0;
+  let startScroll = 0;
+  logoMarquee.addEventListener('pointerdown', (event) => {
+    dragging = true;
+    startX = event.clientX;
+    startScroll = logoMarquee.scrollLeft;
+    logoMarquee.classList.add('is-dragging');
+    logoMarquee.setPointerCapture(event.pointerId);
+  });
+  logoMarquee.addEventListener('pointermove', (event) => {
+    if (!dragging) return;
+    logoMarquee.scrollLeft = startScroll - (event.clientX - startX);
+  });
+  function stopLogoDrag() {
+    dragging = false;
+    logoMarquee.classList.remove('is-dragging');
+  }
+  logoMarquee.addEventListener('pointerup', stopLogoDrag);
+  logoMarquee.addEventListener('pointercancel', stopLogoDrag);
+}
