@@ -116,20 +116,8 @@ p { color: var(--muted); }
 .logo-carousel .section-title { margin-bottom: 18px; }
 .logo-marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fbfcff; }
 .logo-track { display: flex; width: max-content; gap: 14px; padding: 18px 14px; animation: logo-scroll 28s linear infinite; }
-.logo-track span { display: inline-flex; align-items: center; justify-content: center; min-width: 150px; min-height: 64px; padding: 10px 20px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); color: var(--dark); font-weight: 900; box-shadow: 0 8px 20px rgba(23, 32, 51, .06); }
-.logo-card { letter-spacing: 0; font-size: 1.1rem; }
-.logo-card.telcel { color: #1f54a8; font-style: italic; font-size: 1.35rem; }
-.logo-card.bait { background: #ffd927; color: #101010; border-color: #101010; font-size: 1.35rem; }
-.logo-card.att { color: #111; font-size: 1.35rem; }
-.logo-card.movistar { color: #00a8d8; font-size: 1.2rem; }
-.logo-card.cfe { color: #128344; font-size: 1.45rem; }
-.logo-card.telmex { color: #111; border-top: 5px solid #0783bd; font-size: 1.2rem; }
-.logo-card.izzi { color: #1c2424; font-size: 1.45rem; }
-.logo-card.netflix { color: #e50914; font-size: 1.25rem; }
-.logo-card.amazon { color: #111; font-size: 1.25rem; }
-.logo-card.google-play { color: #238a46; font-size: 1.05rem; }
-.logo-card.roblox { color: #111; font-size: 1.2rem; }
-.logo-card.more { background: #fde1e7; color: #b92d45; }
+.logo-track span { display: inline-flex; align-items: center; justify-content: center; min-width: 180px; height: 82px; padding: 12px 22px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 8px 20px rgba(23, 32, 51, .06); }
+.logo-track img { max-width: 150px; max-height: 58px; width: auto; height: auto; object-fit: contain; }
 @keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-marquee:hover .logo-track { animation-play-state: paused; }
 .intro { background: #fff; text-align: center; }
@@ -227,6 +215,9 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+
+
 
 
 
