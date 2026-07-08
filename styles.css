@@ -26,6 +26,10 @@ h1, h2, h3, p { margin-top: 0; }
 h1 { font-size: clamp(2.35rem, 5.8vw, 4.75rem); line-height: .98; margin-bottom: 18px; }
 h2 { font-size: clamp(1.75rem, 3.8vw, 3rem); line-height: 1.08; margin-bottom: 14px; }
 p { color: var(--muted); }
+body, h1, h2, h3, p, span, strong, li, .tag { cursor: default; }
+a, button, .btn, .nav a, .cards article a, .slider-control, .slider-dots button, .whatsapp { cursor: pointer; }
+img, .cards article, .trust-grid article, .step-grid article, .earnings-grid article, .brand-list span { user-select: none; -webkit-user-select: none; }
+
 
 .topbar {
   position: sticky;
@@ -240,6 +244,8 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 @keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-marquee:hover .logo-track, .logo-marquee.is-dragging .logo-track { animation-play-state: paused; }
+
+
 
 
 
