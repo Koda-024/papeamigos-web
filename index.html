@@ -34,21 +34,23 @@
     </header>
 
     <main id="inicio">
-      <section class="hero">
-        <div class="hero-text">
-          <p class="tag">Para papelerías, tiendas y negocios</p>
-          <h1>Gana 7% en recargas y agrega más servicios a tu negocio</h1>
-          <p>Papeamigos te ayuda a vender recargas, cobrar servicios, ofrecer tarjetas de regalo y sumar material gratuito para papelería desde un solo lugar.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="registro/" target="_blank" rel="noopener">Regístrate aquí</a>
-            <a class="btn secondary" href="#recargas">Ver beneficios</a>
-          </div>
+      <section class="hero-slider" aria-label="Promociones principales" data-slider>
+        <div class="slider-track">
+          <article class="slider-slide is-active">
+            <img src="assets/images/placeholder-banner-recargas.svg" alt="Solicitar banner de recargas 7%">
+            <a class="slider-register btn primary" href="registro/" target="_blank" rel="noopener">Regístrate aquí</a>
+          </article>
+          <article class="slider-slide">
+            <img src="assets/images/placeholder-banner-servicios.svg" alt="Solicitar banner de pago de servicios">
+          </article>
+          <article class="slider-slide">
+            <img src="assets/images/placeholder-banner-tarjetas.svg" alt="Solicitar banner de tarjetas de regalo">
+          </article>
         </div>
-        <figure class="media-box hero-visual">
-          <img src="assets/images/placeholder-hero.svg" alt="Solicitar banner principal de Papeamigos">
-        </figure>
+        <button class="slider-control prev" type="button" aria-label="Anterior" data-slider-prev>Anterior</button>
+        <button class="slider-control next" type="button" aria-label="Siguiente" data-slider-next>Siguiente</button>
+        <div class="slider-dots" aria-label="Seleccionar banner" data-slider-dots></div>
       </section>
-
       <section class="benefit-band" aria-label="Beneficios principales">
         <article><strong>7% en recargas</strong><span>El beneficio principal para empezar a vender.</span></article>
         <article><strong>Servicios</strong><span>Cobra recibos y gana por operación.</span></article>
@@ -200,6 +202,7 @@
     <script src="script.js"></script>
   </body>
 </html>
+
 
 
 

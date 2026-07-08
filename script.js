@@ -23,4 +23,30 @@ const revealItems = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }), { threshold: .14 });
 revealItems.forEach(el => revealObserver.observe(el));
 if (nav && menuToggle) nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('is-open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
-
+const slider = document.querySelector('[data-slider]');
+if (slider) {
+  const slides = Array.from(slider.querySelectorAll('.slider-slide'));
+  const dotsWrap = slider.querySelector('[data-slider-dots]');
+  let current = 0;
+  let timer;
+  const dots = slides.map((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Ver banner ${index + 1}`);
+    dot.addEventListener('click', () => show(index));
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
+    clearInterval(timer);
+    timer = setInterval(() => show(current + 1), 6000);
+  }
+  slider.querySelector('[data-slider-prev]').addEventListener('click', () => show(current - 1));
+  slider.querySelector('[data-slider-next]').addEventListener('click', () => show(current + 1));
+  slider.addEventListener('mouseenter', () => clearInterval(timer));
+  slider.addEventListener('mouseleave', () => show(current));
+  show(0);
+}
