@@ -117,10 +117,10 @@ p { color: var(--muted); }
 .logo-marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; cursor: grab; }
 .logo-marquee::-webkit-scrollbar { display: none; }
 .logo-marquee.is-dragging { cursor: grabbing; }
-.logo-track { display: flex; width: max-content; gap: 42px; padding: 20px 0; animation: logo-scroll 32s linear infinite; will-change: transform; }
-.logo-track span { user-select: none; -webkit-user-select: none; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 150px; height: 82px; padding: 0; background: transparent; border: 0; box-shadow: none; }
-.logo-track img { pointer-events: none; user-select: none; -webkit-user-drag: none; max-width: 150px; max-height: 70px; width: auto; height: auto; object-fit: contain; }
-@keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.logo-track { display: flex; width: max-content; gap: 58px; padding: 22px 0; animation: logo-scroll 24s linear infinite; will-change: transform; }
+.logo-track span { user-select: none; -webkit-user-select: none; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 180px; height: 82px; padding: 0; background: transparent; border: 0; box-shadow: none; }
+.logo-track img { pointer-events: none; user-select: none; -webkit-user-drag: none; max-width: 180px; max-height: 74px; width: auto; height: auto; object-fit: contain; }
+@keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } } to { transform: translateX(-50%); } }
 .logo-marquee:hover .logo-track, .logo-marquee.is-dragging .logo-track { animation-play-state: paused; }
 .intro { background: #fff; text-align: center; }
 .intro p { max-width: 900px; margin: 0 auto 24px; }
@@ -217,6 +217,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
 
 
 
