@@ -24,24 +24,3 @@ const revealObserver = new IntersectionObserver(entries => entries.forEach(entry
 revealItems.forEach(el => revealObserver.observe(el));
 if (nav && menuToggle) nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('is-open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
 
-
-const carousel = document.querySelector('[data-carousel]');
-if (carousel) {
-  const slides = [...carousel.querySelectorAll('.carousel-slide')];
-  const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
-  let index = 0;
-  let timer;
-  const show = (next) => {
-    index = (next + slides.length) % slides.length;
-    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
-    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
-  };
-  const play = () => { timer = setInterval(() => show(index + 1), 5500); };
-  const restart = () => { clearInterval(timer); play(); };
-  carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => { show(index - 1); restart(); });
-  carousel.querySelector('[data-carousel-next]').addEventListener('click', () => { show(index + 1); restart(); });
-  dots.forEach(dot => dot.addEventListener('click', () => { show(Number(dot.dataset.carouselDot)); restart(); }));
-  carousel.addEventListener('mouseenter', () => clearInterval(timer));
-  carousel.addEventListener('mouseleave', play);
-  play();
-}
