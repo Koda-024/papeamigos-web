@@ -157,3 +157,6 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 .nav { transition: opacity .2s ease, transform .2s ease; }
 @media (max-width: 900px) { .nav { opacity: 0; transform: translateY(-8px); } .nav.is-open { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+.back-site { border: 0; cursor: pointer; font: inherit; }
+

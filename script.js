@@ -13,3 +13,7 @@ if (leadForm) leadForm.addEventListener("submit", (event) => { event.preventDefa
 
 
 
+
+const closeRegister = document.querySelector('[data-close-register]');
+if (closeRegister) closeRegister.addEventListener('click', () => { window.close(); setTimeout(() => { window.location.href = '../'; }, 150); });
+
