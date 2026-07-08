@@ -55,10 +55,11 @@ p { color: var(--muted); }
 .hero-slider {
   position: relative;
   overflow: hidden;
-  background: #fff;
+  padding: 22px clamp(14px, 4vw, 54px) 34px;
+  background: linear-gradient(135deg, #ffcc14 0%, #ffcc14 42%, #f57691 42%, #f57691 100%);
   border-bottom: 1px solid var(--line);
 }
-.slider-track { position: relative; aspect-ratio: 16 / 9; max-height: 620px; min-height: 360px; background: linear-gradient(135deg, #ffcc14 0%, #ffcc14 45%, #f57691 45%, #f57691 100%); }
+.slider-track { position: relative; width: min(100%, 1380px); aspect-ratio: 16 / 9; max-height: 620px; min-height: 340px; margin: 0 auto; background: transparent; }
 .slider-slide {
   position: absolute;
   inset: 0;
@@ -74,16 +75,21 @@ p { color: var(--muted); }
   top: 50%;
   z-index: 3;
   border: 0;
-  padding: 10px 14px;
-  background: rgba(23, 32, 51, .78);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: rgba(23, 32, 51, .7);
   color: #fff;
-  border-radius: var(--radius);
+  border-radius: 999px;
+  font-size: 0;
   font-weight: 900;
   cursor: pointer;
   transform: translateY(-50%);
 }
-.slider-control.prev { left: 18px; }
-.slider-control.next { right: 18px; }
+.slider-control.prev { left: clamp(18px, 4vw, 58px); }
+.slider-control.next { right: clamp(18px, 4vw, 58px); }
+.slider-control.prev::before { content: "‹"; font-size: 2rem; line-height: 1; }
+.slider-control.next::before { content: "›"; font-size: 2rem; line-height: 1; }
 .slider-dots { position: absolute; left: 0; right: 0; bottom: 16px; z-index: 3; display: flex; justify-content: center; gap: 10px; }
 .slider-dots button { width: 12px; height: 12px; padding: 0; border: 2px solid #fff; background: rgba(23, 32, 51, .35); border-radius: 999px; cursor: pointer; }
 .slider-dots button.is-active { background: var(--yellow); border-color: var(--yellow); }
@@ -201,6 +207,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
 
 
 
