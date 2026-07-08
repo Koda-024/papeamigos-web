@@ -59,7 +59,7 @@ p { color: var(--muted); }
   background: #fff;
   border-bottom: 1px solid var(--line);
 }
-.slider-track { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 620px; min-height: 340px; margin: 0 auto; background: #fff; }
+.slider-track { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 520px; min-height: 300px; margin: 0 auto; background: #fff; }
 .slider-slide {
   position: absolute;
   inset: 0;
@@ -240,4 +240,5 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 @keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-marquee:hover .logo-track, .logo-marquee.is-dragging .logo-track { animation-play-state: paused; }
+
 
