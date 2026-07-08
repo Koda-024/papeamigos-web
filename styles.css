@@ -164,3 +164,16 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
+
+.hero-carousel { position: relative; padding: clamp(28px, 5vw, 54px) clamp(18px, 5vw, 70px); background: #fff; overflow: hidden; }
+.carousel-track { position: relative; min-height: 430px; }
+.carousel-slide { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(22px, 5vw, 54px); align-items: center; opacity: 0; pointer-events: none; transform: translateX(24px); transition: opacity .45s ease, transform .45s ease; }
+.carousel-slide.is-active { opacity: 1; pointer-events: auto; transform: translateX(0); }
+.carousel-slide img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; padding: 12px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.carousel-control { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border: 0; border-radius: 999px; background: var(--yellow); color: var(--dark); font-size: 2rem; font-weight: 900; cursor: pointer; }
+.carousel-control.prev { left: 18px; }
+.carousel-control.next { right: 18px; }
+.carousel-dots { display: flex; gap: 8px; justify-content: center; margin-top: 18px; }
+.carousel-dots button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; background: #c8cfdd; cursor: pointer; }
+.carousel-dots button.is-active { width: 28px; background: var(--pink); }
+@media (max-width: 900px) { .carousel-track { min-height: 650px; } .carousel-slide { grid-template-columns: 1fr; } }
