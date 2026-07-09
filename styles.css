@@ -80,7 +80,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .45s ease, visibility .45s ease;
+  transition: opacity .75s ease, visibility .75s ease;
 }
 .slider-slide.is-active { opacity: 1; visibility: visible; }
 .slider-slide img { width: 100%; height: 100%; object-fit: contain; object-position: center; background: #fff; border-radius: 6px; }
@@ -280,4 +280,5 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 /* hide slider arrows */
 .slider-control { display: none; }
+
 
