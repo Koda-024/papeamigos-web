@@ -98,3 +98,15 @@ const dropdownToggle = document.querySelector('[data-dropdown-toggle]');
 if (dropdownToggle) dropdownToggle.addEventListener('click', (event) => { event.preventDefault(); const box = dropdownToggle.closest('.nav-dropdown'); const open = box.classList.toggle('is-open'); dropdownToggle.setAttribute('aria-expanded', String(open)); });
 document.addEventListener('click', (event) => { const box = document.querySelector('.nav-dropdown'); if (box && !box.contains(event.target)) { box.classList.remove('is-open'); const btn = box.querySelector('[data-dropdown-toggle]'); if (btn) btn.setAttribute('aria-expanded', 'false'); } });
 
+
+// Internal links without hash in the URL.
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', location.pathname + location.search);
+  });
+});
