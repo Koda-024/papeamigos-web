@@ -116,15 +116,11 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .benefit-band strong { display: block; color: var(--pink); font-size: 1.16rem; }
 .benefit-band span { color: var(--muted); }
 
-.logo-carousel { padding-top: 46px; padding-bottom: 46px; background: #fff; overflow: hidden; }
-.logo-carousel .section-title { margin-bottom: 18px; }
-.logo-marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; cursor: grab; }
-.logo-marquee::-webkit-scrollbar { display: none; }
-.logo-marquee.is-dragging { cursor: grabbing; }
-.logo-track { display: flex; width: max-content; gap: 24px; padding: 20px 0; animation: logo-scroll 55s linear infinite; will-change: transform; }
-.logo-track span { user-select: none; -webkit-user-select: none; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 150px; height: 78px; padding: 8px 12px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 8px 20px rgba(23,32,51,.05); }
-.logo-track img { pointer-events: none; user-select: none; -webkit-user-drag: none; max-width: 130px; max-height: 58px; width: auto; height: auto; object-fit: contain; }
-to { transform: translateX(-50%); } } to { transform: translateX(-50%); } }
+.logo-carousel { padding: 0; background: #fff; overflow: hidden; border-top: 4px solid #1f7a4c; border-bottom: 3px solid #1fbf72; }
+.logo-marquee { overflow: hidden; background: #fff; }
+.logo-track { display: flex; align-items: center; width: max-content; gap: clamp(54px, 7vw, 130px); padding: 42px 0; animation: logo-scroll 34s linear infinite; will-change: transform; }
+.logo-track img { flex: 0 0 auto; max-width: clamp(150px, 16vw, 330px); max-height: 104px; width: auto; height: auto; object-fit: contain; user-select: none; -webkit-user-drag: none; }
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
 .intro { background: #fff; text-align: center; }
 .intro p { max-width: 900px; margin: 0 auto 24px; }
 .trust-section { background: #fbfcff; }
@@ -142,10 +138,14 @@ to { transform: translateX(-50%); } } to { transform: translateX(-50%); } }
 .earnings { background: #fff; }
 .earnings-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; }
 .earnings-grid article { padding: 24px; background: #fbfcff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
-.earnings-grid article.featured { background: var(--yellow); border-color: #e6b900; }`n.earnings-grid article.service-highlight { background: #fff8d8; border-color: #ffcc14; }`n.earnings-grid article.service-highlight strong { color: #b92d45; }
+.earnings-grid article.featured { background: var(--yellow); border-color: #e6b900; }
+.earnings-grid article.service-highlight { background: #fff8d8; border-color: #ffcc14; }
+.earnings-grid article.service-highlight strong { color: #b92d45; }
 .earnings-grid span { display: block; margin-bottom: 10px; color: #b92d45; font-weight: 900; text-transform: uppercase; }
 .earnings-grid strong { display: block; margin-bottom: 12px; color: var(--dark); font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: .9; }
-.earnings-grid p { margin-bottom: 0; }`n.earnings-grid ul { margin: 16px 0 0; padding: 0; list-style: none; color: var(--dark); font-weight: 800; }`n.earnings-grid li { padding: 7px 0; border-top: 1px solid rgba(23, 32, 51, .12); }
+.earnings-grid p { margin-bottom: 0; }
+.earnings-grid ul { margin: 16px 0 0; padding: 0; list-style: none; color: var(--dark); font-weight: 800; }
+.earnings-grid li { padding: 7px 0; border-top: 1px solid rgba(23, 32, 51, .12); }
 .steps { background: #fff4bd; }
 .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .step-grid article { padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
@@ -244,6 +244,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 @keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-marquee:hover .logo-track, .logo-marquee.is-dragging .logo-track { animation-play-state: paused; }
+
 
 
 
