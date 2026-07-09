@@ -91,3 +91,10 @@ if (logoMarquee) {
   requestAnimationFrame(move);
 }
 
+
+const homeLink = document.querySelector('[data-home-link]');
+if (homeLink) homeLink.addEventListener('click', () => { history.replaceState(null, '', location.pathname + location.search); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+const dropdownToggle = document.querySelector('[data-dropdown-toggle]');
+if (dropdownToggle) dropdownToggle.addEventListener('click', (event) => { event.preventDefault(); const box = dropdownToggle.closest('.nav-dropdown'); const open = box.classList.toggle('is-open'); dropdownToggle.setAttribute('aria-expanded', String(open)); });
+document.addEventListener('click', (event) => { const box = document.querySelector('.nav-dropdown'); if (box && !box.contains(event.target)) { box.classList.remove('is-open'); const btn = box.querySelector('[data-dropdown-toggle]'); if (btn) btn.setAttribute('aria-expanded', 'false'); } });
+

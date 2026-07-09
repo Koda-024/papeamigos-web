@@ -16,7 +16,7 @@
     <link rel="icon" href="assets/images/logo-papeamigos.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body id="top">
+  <body>
     <header class="topbar">
       <a href="#inicio" class="brand" aria-label="Papeamigos inicio">
         <img src="assets/images/logo-papeamigos.png" alt="Papeamigos Papelerías">
@@ -25,9 +25,9 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="nav" data-nav>
-        <a class="nav-home" href="#top">Inicio</a>
+        <button class="nav-home" type="button" data-home-link>Inicio</button>
         <div class="nav-dropdown">
-          <button class="nav-drop-toggle" type="button" aria-haspopup="true">Recargas</button>
+          <button class="nav-drop-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle>Recargas</button>
           <div class="dropdown-menu">
             <a href="#recargas"><strong>Recargas</strong><span>7% de comisión al comprar saldo.</span></a>
             <a href="#servicios"><strong>Servicios</strong><span>Costo fijo de $6 por recibo.</span></a>
@@ -238,6 +238,7 @@
     <script src="script.js"></script>
   </body>
 </html>
+
 
 
 
