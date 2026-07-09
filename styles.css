@@ -117,10 +117,11 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .benefit-band span { color: var(--muted); }
 
 .logo-carousel { padding: 0; background: #fff; overflow: hidden; border-top: 4px solid #1f7a4c; border-bottom: 3px solid #1fbf72; }
-.logo-marquee { overflow: hidden; background: #fff; }
-.logo-track { display: flex; align-items: center; width: max-content; gap: clamp(54px, 7vw, 130px); padding: 42px 0; animation: logo-scroll 34s linear infinite; will-change: transform; }
+.logo-marquee { overflow-x: auto; overflow-y: hidden; background: #fff; cursor: grab; scrollbar-width: none; touch-action: pan-y; user-select: none; }
+.logo-track { display: flex; align-items: center; width: max-content; gap: clamp(54px, 7vw, 130px); padding: 42px 0; will-change: transform; }
 .logo-track img { flex: 0 0 auto; max-width: clamp(150px, 16vw, 330px); max-height: 104px; width: auto; height: auto; object-fit: contain; user-select: none; -webkit-user-drag: none; }
-.logo-marquee:hover .logo-track { animation-play-state: paused; }
+.logo-marquee::-webkit-scrollbar { display: none; }
+.logo-marquee.is-dragging { cursor: grabbing; }
 .intro { background: #fff; text-align: center; }
 .intro p { max-width: 900px; margin: 0 auto 24px; }
 .trust-section { background: #fbfcff; }
@@ -242,8 +243,10 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 
 
-@keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.logo-marquee:hover .logo-track, .logo-marquee.is-dragging .logo-track { animation-play-state: paused; }
+
+
+
+
 
 
 

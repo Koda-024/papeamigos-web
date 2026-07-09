@@ -51,3 +51,43 @@ if (slider) {
   show(0);
 }
 
+
+const logoMarquee = document.querySelector('.logo-marquee');
+if (logoMarquee) {
+  const track = logoMarquee.querySelector('.logo-track');
+  let dragging = false;
+  let startX = 0;
+  let startScroll = 0;
+  const halfWidth = () => track.scrollWidth / 2;
+  const wrap = () => {
+    const half = halfWidth();
+    if (half <= 0) return;
+    if (logoMarquee.scrollLeft >= half) logoMarquee.scrollLeft -= half;
+    if (logoMarquee.scrollLeft < 0) logoMarquee.scrollLeft += half;
+  };
+  const move = () => {
+    if (!dragging) {
+      logoMarquee.scrollLeft += 0.45;
+      wrap();
+    }
+    requestAnimationFrame(move);
+  };
+  logoMarquee.addEventListener('pointerdown', (event) => {
+    dragging = true;
+    startX = event.clientX;
+    startScroll = logoMarquee.scrollLeft;
+    logoMarquee.classList.add('is-dragging');
+    logoMarquee.setPointerCapture(event.pointerId);
+  });
+  logoMarquee.addEventListener('pointermove', (event) => {
+    if (!dragging) return;
+    logoMarquee.scrollLeft = startScroll - (event.clientX - startX);
+    wrap();
+  });
+  ['pointerup', 'pointercancel'].forEach(type => logoMarquee.addEventListener(type, () => {
+    dragging = false;
+    logoMarquee.classList.remove('is-dragging');
+  }));
+  requestAnimationFrame(move);
+}
+
