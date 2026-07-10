@@ -187,6 +187,9 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .brand-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
 .brand-list span { display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 10px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); font-weight: 900; text-align: center; }
 .brand-list span:last-child { background: #fde1e7; color: #b92d45; }
+.logo-list span { min-height: 66px; }
+.logo-list img { max-width: 138px; max-height: 44px; width: auto; height: auto; object-fit: contain; }
+@media (max-width: 620px) { .logo-list span { min-height: 58px; } .logo-list img { max-width: 125px; max-height: 38px; } }
 
 .commission { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; background: linear-gradient(135deg, var(--pink), var(--blue)); color: #fff; }
 .commission p, .commission .tag { color: #fff; }
@@ -313,6 +316,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 /* hide slider arrows */
 .slider-control { display: none; }
+
 
 
 
