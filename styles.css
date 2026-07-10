@@ -201,9 +201,20 @@ form { display: grid; gap: 16px; padding: 24px; background: #fff; border: 1px so
 label { display: grid; gap: 8px; font-weight: 900; }
 input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px solid #d8deea; border-radius: var(--radius); font: inherit; } textarea { resize: vertical; }
 
-.footer { display: grid; gap: 12px; padding: 42px clamp(18px, 5vw, 70px); background: var(--dark); color: #fff; }
-.footer img { width: 150px; height: 58px; object-fit: contain; background: #fff; border-radius: var(--radius); }
-.footer p { margin: 0; color: #d9deea; }
+.footer { padding: 58px clamp(18px, 5vw, 70px) 22px; background: #111827; color: #fff; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr 1fr; gap: clamp(24px, 5vw, 70px); align-items: start; }
+.footer img { width: 132px; height: 58px; object-fit: contain; background: #fff; border-radius: var(--radius); margin-bottom: 12px; }
+.footer h2, .footer h3 { margin: 0 0 12px; color: #fff; }
+.footer h2 { font-size: 1.8rem; }
+.footer h3 { font-size: 1.18rem; }
+.footer p { margin: 0 0 12px; color: #d9deea; }
+.footer a { display: block; margin: 8px 0; color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.footer a:hover { color: var(--yellow); }
+.footer-phone { font-size: 1.35rem; font-weight: 900; color: #fff !important; }
+.footer-whatsapp { display: inline-flex !important; width: fit-content; margin-top: 10px !important; padding: 12px 16px; background: #18a85f; border-radius: var(--radius); color: #fff !important; text-decoration: none !important; font-weight: 900; }
+.footer-copy { margin-top: 38px !important; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); text-align: center; font-size: .9rem; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .footer { padding: 42px 18px 18px; } .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
 .whatsapp { position: fixed; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; background: #1e955d; border-radius: 999px; box-shadow: 0 14px 28px rgba(30, 149, 93, .35); }
 .whatsapp img { width: 32px; height: 32px; }
 
@@ -316,6 +327,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 /* hide slider arrows */
 .slider-control { display: none; }
+
 
 
 
