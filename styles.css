@@ -71,7 +71,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
   position: relative;
   overflow: hidden;
   padding: 14px clamp(12px, 3vw, 36px) 24px;
-  background: #fff;
+  background: linear-gradient(180deg, #fff8fb 0%, #fff4bd 100%);
   border-bottom: 1px solid var(--line);
 }
 .slider-track { position: relative; width: min(100%, 1120px); aspect-ratio: 16 / 9; max-height: calc(100vh - 142px); margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 14px 34px rgba(23, 32, 51, .08); }
@@ -127,8 +127,8 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .benefit-band strong { display: block; color: var(--pink); font-size: 1.16rem; }
 .benefit-band span { color: var(--muted); }
 
-.logo-carousel { padding: 0; background: #fff; overflow: hidden; border-top: 4px solid var(--pink); border-bottom: 3px solid var(--yellow); }
-.logo-marquee { overflow-x: auto; overflow-y: hidden; background: #fff; cursor: grab; scrollbar-width: none; touch-action: pan-y; user-select: none; }
+.logo-carousel { padding: 0; background: #fff8fb; overflow: hidden; border-top: 4px solid var(--pink); border-bottom: 3px solid var(--yellow); }
+.logo-marquee { overflow-x: auto; overflow-y: hidden; background: #fff8fb; cursor: grab; scrollbar-width: none; touch-action: pan-y; user-select: none; }
 .logo-track { display: flex; align-items: center; width: max-content; gap: clamp(54px, 7vw, 130px); padding: 42px 0; will-change: transform; }
 .logo-track img { flex: 0 0 auto; max-width: clamp(150px, 16vw, 330px); max-height: 104px; width: auto; height: auto; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; user-drag: none; }
 .logo-marquee::-webkit-scrollbar { display: none; }
@@ -162,7 +162,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .intro-visual img { width: min(290px, 70%); filter: drop-shadow(0 24px 34px rgba(0,0,0,.24)); }
 .intro-badges { position: absolute; right: 0; bottom: 0; display: grid; gap: 10px; }
 .intro-badges span { padding: 12px 16px; border-radius: var(--radius); background: rgba(255,255,255,.92); color: var(--dark); font-weight: 900; box-shadow: 0 14px 30px rgba(0,0,0,.16); }
-.trust-section { background: #fbfcff; }
+.trust-section { background: #fff8fb; }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .trust-grid article { min-height: 150px; padding: 22px; background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--yellow); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
 .trust-grid strong { display: block; margin-bottom: 8px; color: var(--dark); font-size: 1.08rem; }
@@ -174,7 +174,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .cards article a { font-weight: 900; color: var(--pink); }
 
 
-.earnings { background: #fff; }
+.earnings { background: #fbfcff; }
 .earnings-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; }
 .earnings-grid article { padding: 24px; background: #fbfcff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
 .earnings-grid article.featured { background: var(--yellow); border-color: #e6b900; }
@@ -191,7 +191,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .step-grid span { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-bottom: 20px; background: var(--pink); color: #fff; border-radius: var(--radius); font-weight: 900; }
 
 .service-detail { display: grid; grid-template-columns: 1fr .9fr; gap: clamp(28px, 6vw, 70px); align-items: center; background: #fff; }
-.service-detail.alt { background: #fbfcff; }
+.service-detail.alt { background: #fff8fb; }
 .service-copy .btn { margin-top: 22px; }
 .brand-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
 .brand-list span { display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 10px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); font-weight: 900; text-align: center; }
@@ -200,7 +200,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .commission { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; background: linear-gradient(135deg, var(--pink), var(--blue)); color: #fff; }
 .commission p, .commission .tag { color: #fff; }
 .big-number { font-size: clamp(6rem, 18vw, 13rem); line-height: .8; font-weight: 900; color: var(--yellow); }
-.material { background: #fff; }
+.material { background: #fff8fb; }
 .material .media-box { max-width: 820px; margin-bottom: 22px; }
 .register { display: grid; grid-template-columns: .85fr 1fr; gap: clamp(28px, 6vw, 70px); align-items: start; background: var(--soft); }
 form { display: grid; gap: 16px; padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
