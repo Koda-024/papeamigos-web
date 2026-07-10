@@ -142,7 +142,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
   overflow: hidden;
   background:
     radial-gradient(circle at 15% 20%, rgba(255,255,255,.16) 0 2px, transparent 3px) 0 0 / 18px 18px,
-    linear-gradient(135deg, #263b8f 0%, #d83c70 58%, #ffc928 100%);
+    linear-gradient(135deg, #263b8f 0%, #304aa6 58%, #e93e69 100%);
   color: #fff;
 }
 .intro::after {
@@ -151,8 +151,8 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
   inset: auto -8% -32% 48%;
   height: 72%;
   border-radius: 50%;
-  background: repeating-conic-gradient(from -18deg, rgba(255,204,20,.22) 0 10deg, rgba(255,255,255,.06) 10deg 20deg);
-  opacity: .42;
+  background: repeating-conic-gradient(from -18deg, rgba(255,204,20,.18) 0 10deg, rgba(255,255,255,.05) 10deg 20deg);
+  opacity: .36;
 }
 .intro-copy { position: relative; z-index: 1; max-width: 820px; }
 .intro .tag { color: var(--yellow); }
