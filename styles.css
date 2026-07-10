@@ -142,7 +142,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
   overflow: hidden;
   background:
     radial-gradient(circle at 15% 20%, rgba(255,255,255,.16) 0 2px, transparent 3px) 0 0 / 18px 18px,
-    linear-gradient(135deg, #154da6 0%, #126a8a 46%, #15934f 100%);
+    linear-gradient(135deg, #2d3f91 0%, #ec3f75 52%, #ffcc14 100%);
   color: #fff;
 }
 .intro::after {
@@ -151,7 +151,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
   inset: auto -8% -32% 48%;
   height: 72%;
   border-radius: 50%;
-  background: repeating-conic-gradient(from -18deg, rgba(255,255,255,.16) 0 10deg, rgba(255,255,255,.04) 10deg 20deg);
+  background: repeating-conic-gradient(from -18deg, rgba(255,204,20,.22) 0 10deg, rgba(255,255,255,.06) 10deg 20deg);
   opacity: .65;
 }
 .intro-copy { position: relative; z-index: 1; max-width: 820px; }
@@ -307,4 +307,5 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 /* hide slider arrows */
 .slider-control { display: none; }
+
 
