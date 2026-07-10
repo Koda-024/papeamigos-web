@@ -129,8 +129,8 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 
 .logo-carousel { padding: 0; background: #fff8fb; overflow: hidden; border-top: 4px solid var(--pink); border-bottom: 3px solid var(--yellow); }
 .logo-marquee { overflow-x: auto; overflow-y: hidden; background: #fff8fb; cursor: grab; scrollbar-width: none; touch-action: pan-y; user-select: none; }
-.logo-track { display: flex; align-items: center; width: max-content; gap: clamp(54px, 7vw, 130px); padding: 42px 0; will-change: transform; }
-.logo-track img { flex: 0 0 auto; max-width: clamp(150px, 16vw, 330px); max-height: 104px; width: auto; height: auto; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; user-drag: none; }
+.logo-track { display: flex; align-items: center; width: max-content; gap: clamp(46px, 6vw, 96px); padding: 36px 0; will-change: transform; }
+.logo-track img { flex: 0 0 auto; max-width: clamp(120px, 13vw, 220px); max-height: 88px; width: auto; height: auto; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; user-drag: none; }
 .logo-marquee::-webkit-scrollbar { display: none; }
 .logo-marquee.is-dragging { cursor: grabbing; }
 .intro {
@@ -233,7 +233,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
   .slider-dots { bottom: 58px; }
   .slider-control { font-size: .78rem; padding: 8px 10px; }
   .logo-track { gap: 42px; padding: 26px 0; }
-  .logo-track img { max-width: 135px; max-height: 66px; }
+  .logo-track img { max-width: 118px; max-height: 58px; }
   .intro { text-align: left; }
   .intro h2 { font-size: 2.15rem; }
   .intro-visual { min-height: 160px; }
@@ -313,6 +313,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 /* hide slider arrows */
 .slider-control { display: none; }
+
 
 
 
