@@ -22,7 +22,7 @@ document.querySelectorAll('.section, .benefit-band, .hero').forEach(el => el.cla
 const revealItems = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }), { threshold: .14 });
 revealItems.forEach(el => revealObserver.observe(el));
-if (nav && menuToggle) nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('is-open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
+if (nav && menuToggle) nav.querySelectorAll('a, [data-home-link]').forEach(link => link.addEventListener('click', () => { nav.classList.remove('is-open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
 const slider = document.querySelector('[data-slider]');
 if (slider) {
   const slides = Array.from(slider.querySelectorAll('.slider-slide'));
@@ -110,5 +110,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     history.replaceState(null, '', location.pathname + location.search);
   });
 });
+
 
 
