@@ -44,12 +44,10 @@ if (slider) {
     slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
     dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
     clearInterval(timer);
-    timer = setInterval(() => show(current + 1), 3400);
+    timer = setInterval(() => show(current + 1), 3000);
   }
   slider.querySelector('[data-slider-prev]').addEventListener('click', () => show(current - 1));
   slider.querySelector('[data-slider-next]').addEventListener('click', () => show(current + 1));
-  slider.addEventListener('mouseenter', () => clearInterval(timer));
-  slider.addEventListener('mouseleave', () => show(current));
   show(0);
 }
 
@@ -112,6 +110,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     history.replaceState(null, '', location.pathname + location.search);
   });
 });
+
 
 
 

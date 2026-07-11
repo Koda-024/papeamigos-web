@@ -80,7 +80,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .75s ease, visibility .75s ease;
+  transition: opacity .6s ease-in-out, visibility .6s ease-in-out;
 }
 .slider-slide.is-active { opacity: 1; visibility: visible; }
 .slider-slide img { width: 100%; height: 100%; object-fit: contain; object-position: center; background: transparent; border-radius: 6px; }
@@ -345,5 +345,6 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 .service-example strong { color: #b92d45; font-size: 1.08rem; }
 .service-example span { color: var(--dark); font-weight: 800; }
 @media (max-width: 620px) { .service-example { padding: 14px; } }
+
 
 
