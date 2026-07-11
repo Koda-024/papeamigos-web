@@ -233,7 +233,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
   .nav { display: none; position: absolute; left: 12px; right: 12px; top: calc(100% + 8px); flex-direction: column; align-items: stretch; gap: 0; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); font-size: 1rem; }
   .nav.is-open { display: flex; }
   .nav a, .nav button { width: 100%; padding: 13px 12px; min-height: auto; text-align: left; border-radius: 6px; }
-  .nav-home { background: var(--blue) !important; color: #fff !important; border-radius: 8px !important; }
+  .nav-home { background: var(--pink) !important; color: #fff !important; border-radius: 8px !important; }
   .nav-dropdown { display: contents; }
   .nav-drop-toggle { display: none !important; }
   .dropdown-menu { position: static; display: grid; min-width: 0; padding: 4px 0; border: 0; box-shadow: none; }
@@ -330,6 +330,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 /* hide slider arrows */
 .slider-control { display: none; }
+
 
 
 
