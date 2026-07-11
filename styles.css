@@ -165,16 +165,17 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 
 
 .earnings { background: #fbfcff; }
-.earnings-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; }
-.earnings-grid article { padding: 24px; background: #fbfcff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
+.earnings-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.earnings-grid article { min-height: 380px; padding: 28px; background: #fbfcff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
 .earnings-grid article.featured { background: var(--yellow); border-color: #e6b900; }
 .earnings-grid article.service-highlight { background: #fff8d8; border-color: #ffcc14; }
 .earnings-grid article.service-highlight strong { color: #b92d45; }
 .earnings-grid span { display: block; margin-bottom: 10px; color: #b92d45; font-weight: 900; text-transform: uppercase; }
-.earnings-grid strong { display: block; margin-bottom: 12px; color: var(--dark); font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: .9; }`r`n.earnings-grid strong.service-price { font-size: clamp(2.6rem, 4.2vw, 4rem); line-height: .95; }
+.earnings-grid strong { display: block; margin-bottom: 14px; color: var(--dark); font-size: clamp(3rem, 5vw, 4.5rem); line-height: .9; }
+.earnings-grid strong.service-price { font-size: clamp(2.8rem, 4vw, 3.8rem); line-height: .95; letter-spacing: -1px; }
 .earnings-grid p { margin-bottom: 0; }
 .earnings-grid ul { margin: 16px 0 0; padding: 0; list-style: none; color: var(--dark); font-weight: 800; }
-.earnings-grid li { padding: 7px 0; border-top: 1px solid rgba(23, 32, 51, .12); }
+.earnings-grid li { padding: 9px 0; border-top: 1px solid rgba(23, 32, 51, .12); }
 .steps { background: #fff4bd; }
 .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .step-grid article { padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 24px rgba(23, 32, 51, .06); }
@@ -227,7 +228,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
   .topbar { padding: 10px 16px; }
   .brand img { width: 118px; height: 52px; }
   .hero, .service-detail, .register, .commission { grid-template-columns: 1fr; }
-  .benefit-band, .trust-grid, .step-grid, .earnings-grid { grid-template-columns: 1fr 1fr; }
+  .benefit-band, .trust-grid, .step-grid { grid-template-columns: 1fr 1fr; } .earnings-grid { grid-template-columns: 1fr; }
   .big-number { font-size: 6rem; }
   .nav { display: none; position: absolute; left: 12px; right: 12px; top: calc(100% + 8px); flex-direction: column; align-items: stretch; gap: 0; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); font-size: 1rem; }
   .nav.is-open { display: flex; }
@@ -345,6 +346,8 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 .service-example strong { color: #b92d45; font-size: 1.08rem; }
 .service-example span { color: var(--dark); font-weight: 800; }
 @media (max-width: 620px) { .service-example { padding: 14px; } }
+
+
 
 
 
