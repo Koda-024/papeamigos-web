@@ -201,7 +201,10 @@ form { display: grid; gap: 16px; padding: 24px; background: #fff; border: 1px so
 label { display: grid; gap: 8px; font-weight: 900; }
 input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px solid #d8deea; border-radius: var(--radius); font: inherit; } textarea { resize: vertical; }
 
-.footer { padding: 58px clamp(18px, 5vw, 70px) 22px; background: #111827; color: #fff; }
+.footer { position: relative; overflow: hidden; padding: 58px clamp(18px, 5vw, 70px) 22px; background: radial-gradient(circle at 85% 18%, rgba(233,62,105,.18), transparent 28%), radial-gradient(circle at 18% 88%, rgba(255,204,20,.12), transparent 26%), linear-gradient(135deg, #111827 0%, #172452 58%, #111827 100%); color: #fff; }
+.footer::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,.09) 1px, transparent 1.6px); background-size: 26px 26px; opacity: .42; pointer-events: none; }
+.footer::after { content: ""; position: absolute; right: -120px; bottom: -150px; width: 420px; height: 420px; border-radius: 50%; background: rgba(255,204,20,.08); pointer-events: none; }
+.footer-grid, .footer-copy { position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr 1fr; gap: clamp(24px, 5vw, 70px); align-items: start; }
 .footer img { width: 132px; height: 58px; object-fit: contain; background: #fff; border-radius: var(--radius); margin-bottom: 12px; }
 .footer h2, .footer h3 { margin: 0 0 12px; color: #fff; }
@@ -327,6 +330,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 /* hide slider arrows */
 .slider-control { display: none; }
+
 
 
 
