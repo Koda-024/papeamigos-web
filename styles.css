@@ -171,7 +171,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .earnings-grid article.service-highlight { background: #fff8d8; border-color: #ffcc14; }
 .earnings-grid article.service-highlight strong { color: #b92d45; }
 .earnings-grid span { display: block; margin-bottom: 10px; color: #b92d45; font-weight: 900; text-transform: uppercase; }
-.earnings-grid strong { display: block; margin-bottom: 12px; color: var(--dark); font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: .9; }
+.earnings-grid strong { display: block; margin-bottom: 12px; color: var(--dark); font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: .9; }`r`n.earnings-grid strong.service-price { font-size: clamp(2.6rem, 4.2vw, 4rem); line-height: .95; }
 .earnings-grid p { margin-bottom: 0; }
 .earnings-grid ul { margin: 16px 0 0; padding: 0; list-style: none; color: var(--dark); font-weight: 800; }
 .earnings-grid li { padding: 7px 0; border-top: 1px solid rgba(23, 32, 51, .12); }
@@ -345,6 +345,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 .service-example strong { color: #b92d45; font-size: 1.08rem; }
 .service-example span { color: var(--dark); font-weight: 800; }
 @media (max-width: 620px) { .service-example { padding: 14px; } }
+
 
 
 
