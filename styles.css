@@ -38,15 +38,15 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px clamp(18px, 5vw, 70px);
+  padding: 8px clamp(18px, 5vw, 70px);
   background: #fff;
   border-bottom: 1px solid var(--line);
 }
-.brand img { width: 160px; height: 58px; object-fit: contain; }
-.nav { display: flex; gap: 26px; align-items: center; font-weight: 700; color: var(--dark); font-size: 1.08rem; }
+.brand img { width: 174px; height: 64px; object-fit: contain; }
+.nav { display: flex; gap: 22px; align-items: center; font-weight: 700; color: var(--dark); font-size: 1.04rem; }
 .nav a, .nav button { color: var(--dark); font: inherit; font-weight: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
 .nav a:hover, .nav button:hover { color: var(--pink); }
-.nav-home { min-height: 72px; display: inline-flex; align-items: center; padding: 0 30px !important; background: var(--blue) !important; color: #fff !important; border-radius: 14px 0 14px 0; }
+.nav-home { min-height: 58px; display: inline-flex; align-items: center; padding: 0 26px !important; background: var(--blue) !important; color: #fff !important; border-radius: 12px 0 12px 0; }
 .nav-dropdown { position: relative; }
 .nav-drop-toggle { display: inline-flex; align-items: center; gap: 8px; }
 .nav-drop-toggle::after { content: ""; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid currentColor; }
@@ -56,7 +56,7 @@ img, .cards article, .trust-grid article, .step-grid article, .earnings-grid art
 .dropdown-menu span { color: var(--muted); font-size: .9rem; }
 .dropdown-menu a:hover { color: var(--pink); }
 .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu, .nav-dropdown.is-open .dropdown-menu { display: block; }
-.nav-register { white-space: nowrap; }
+.nav-register { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px !important; background: var(--yellow) !important; color: var(--dark) !important; border-radius: var(--radius); white-space: nowrap; }
 .menu-toggle { display: none; width: 42px; height: 42px; padding: 9px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
 .menu-toggle span { display: block; height: 2px; margin: 5px 0; background: var(--dark); }
 
@@ -330,6 +330,7 @@ input, select, textarea { min-height: 48px; padding: 12px 14px; border: 1px soli
 
 /* hide slider arrows */
 .slider-control { display: none; }
+
 
 
 
