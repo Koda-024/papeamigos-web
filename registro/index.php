@@ -1,4 +1,10 @@
-﻿<!doctype html>
+﻿<?php
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
+<!doctype html>
 <html lang="es-MX">
   <head>
     <meta charset="utf-8">
@@ -19,7 +25,7 @@
         <div class="register-hero"><p class="tag">Registro</p><h1>Regístrate en Papeamigos</h1><p>Vende recargas, cobra servicios y agrega material gratis para tu negocio.</p><div class="register-logo-card"><img src="../assets/images/logo-papeamigos.png" alt="Papeamigos Papelerías"><strong>7% solo en recargas</strong><span>Servicios y material gratis disponibles</span></div></div>
         <form id="registroForm" data-lead-form data-api-endpoint="/api/index.php">
           <!-- El servidor PHP debe completar este valor con el token de la sesión. -->
-          <input type="hidden" id="csrfTokenReg" name="csrfTokenReg" value="">
+          <input type="hidden" id="csrfTokenReg" name="csrfTokenReg" value="<?php echo htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
           <label>Nombre completo<input id="reg-name" type="text" name="nombre" maxlength="100" required></label>
           <label>Email<input id="reg-email" type="email" name="correo" maxlength="100" required></label>
           <label>Celular (10 dígitos)<input id="reg-phone" type="tel" name="telefono" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required></label>

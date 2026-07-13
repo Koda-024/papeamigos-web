@@ -367,3 +367,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 @media (max-width: 900px) { .register { align-items: start; } .register-logo-card { display: none; } }
 
 
+
+[data-registration-status] { margin: 0; color: var(--red); font-weight: 700; }
+[data-registration-status]:empty { display: none; }
+#btnSubmitRegistro:disabled { cursor: wait; opacity: .72; }
+

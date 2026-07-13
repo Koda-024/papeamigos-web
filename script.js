@@ -7,7 +7,102 @@ const leadForm = document.querySelector("[data-lead-form]");
 function wa(message) { return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`; }
 whatsappLinks.forEach((link) => { link.href = wa(WHATSAPP_MESSAGE); link.target = "_blank"; link.rel = "noopener"; });
 if (menuToggle && nav) menuToggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); menuToggle.setAttribute("aria-expanded", String(open)); });
-if (leadForm) leadForm.addEventListener("submit", (event) => { event.preventDefault(); const data = new FormData(leadForm); const msg = [`Hola, escribo desde la página web PapeAmigos: https://papeamigos-web.vercel.app/`, `Nombre: ${data.get("nombre") || ""}`, `Email: ${data.get("email") || ""}`, `Celular: ${data.get("telefono") || ""}`, `Estado: ${data.get("estado") || ""}`, `Comentarios: ${data.get("comentarios") || ""}`].join("\n"); window.location.href = wa(msg); });
+const encodeXml = (value) => String(value || "")
+  .replace(/&/g, "&amp;")
+  .replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;")
+  .replace(/'/g, "&apos;");
+
+function xmlValue(documentNode, name) {
+  return Array.from(documentNode.getElementsByTagName("*")).find((node) => node.localName === name)?.textContent || "";
+}
+
+if (leadForm) leadForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!leadForm.reportValidity()) return;
+
+  const data = new FormData(leadForm);
+  const nombre = String(data.get("nombre") || "").trim();
+  const correo = String(data.get("correo") || data.get("email") || "").trim();
+  const telefono = String(data.get("telefono") || "").trim();
+  const estado = String(data.get("estado") || "").trim();
+  const comentarios = String(data.get("comentarios") || "").trim();
+  const csrfToken = String(data.get("csrfTokenReg") || document.querySelector('meta[name="csrf-token"]')?.content || "").trim();
+  const apiEndpoint = leadForm.dataset.apiEndpoint || document.querySelector('meta[name="registration-api"]')?.content || "";
+  const message = [
+    "Hola, escribo desde la página web PapeAmigos: https://papeamigos-web.vercel.app/",
+    `Nombre: ${nombre}`,
+    `Email: ${correo}`,
+    `Celular: ${telefono}`,
+    `Estado: ${estado}`,
+    `Comentarios: ${comentarios}`
+  ].join("\n");
+
+  // En Vercel no existe sesión PHP; se conserva el envío por WhatsApp.
+  if (!apiEndpoint || !csrfToken) {
+    window.location.href = wa(message);
+    return;
+  }
+
+  const submitButton = leadForm.querySelector('[type="submit"]');
+  const status = leadForm.querySelector("[data-registration-status]");
+  const originalLabel = submitButton?.textContent || "Enviar Datos";
+  if (submitButton) { submitButton.disabled = true; submitButton.textContent = "Creando cuenta..."; }
+  if (status) status.textContent = "Procesando registro...";
+
+  const soapBody = `
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+      <soap:Body>
+        <gestionarPDV xmlns="/api">
+          <xml><![CDATA[
+            <PDV>
+              <Accion>alta</Accion>
+              <Tipo>3</Tipo>
+              <Nombre>${encodeXml(nombre)}</Nombre>
+              <Correo>${encodeXml(correo)}</Correo>
+              <Telefono>${encodeXml(telefono)}</Telefono>
+              <Estado>${encodeXml(estado)}</Estado>
+              <CsrfToken>${encodeXml(csrfToken)}</CsrfToken>
+            </PDV>
+          ]]></xml>
+        </gestionarPDV>
+      </soap:Body>
+    </soap:Envelope>`;
+
+  try {
+    const response = await fetch(apiEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/soap+xml; charset=utf-8" },
+      credentials: "same-origin",
+      body: soapBody
+    });
+    if (!response.ok) throw new Error(`Error del servidor (${response.status})`);
+
+    const parser = new DOMParser();
+    const soapDocument = parser.parseFromString(await response.text(), "application/xml");
+    const returnText = xmlValue(soapDocument, "return");
+    if (!returnText) throw new Error("Respuesta inválida del servidor");
+
+    const resultDocument = parser.parseFromString(returnText, "application/xml");
+    const apiError = xmlValue(resultDocument, "Error");
+    if (apiError) throw new Error(apiError);
+
+    const success = xmlValue(resultDocument, "Exito");
+    const usuario = xmlValue(resultDocument, "Usuario");
+    const contrasena = xmlValue(resultDocument, "Contrasena");
+    if (!success || !usuario || !contrasena) throw new Error("Respuesta incompleta del servidor");
+
+    window.alert(`${success}\n\nUsuario: ${usuario}\nContraseña: ${contrasena}`);
+    const params = new URLSearchParams({ usuario, contrasena, bienvenido: "1" });
+    window.location.href = `/?${params.toString()}`;
+  } catch (error) {
+    if (status) status.textContent = error.message || "No se pudo procesar el registro.";
+    window.alert(error.message || "No se pudo procesar el registro.");
+  } finally {
+    if (submitButton) { submitButton.disabled = false; submitButton.textContent = originalLabel; }
+  }
+});
 
 
 
@@ -109,12 +204,4 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     history.replaceState(null, '', location.pathname + location.search);
   });
 });
-
-
-
-
-
-
-
-
 
