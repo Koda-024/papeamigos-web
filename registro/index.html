@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="registration-api" content="/api/index.php">
+    <!-- Cambiar content cuando Papeamigos confirme la URL real. Ejemplo: https://papeamigos.com/api/index.php -->
+    <meta name="registration-api" content="">
     <title>Registro | Papeamigos</title>
     <meta name="description" content="Regístrate en Papeamigos para vender recargas, cobrar servicios y ofrecer tarjetas de regalo.">
     <link rel="icon" href="../assets/images/logo-papeamigos.png" type="image/png">
@@ -17,7 +18,7 @@
     <main>
       <section class="section register register-page" id="registro">
         <div class="register-hero"><p class="tag">Registro</p><h1>Regístrate en Papeamigos</h1><p>Vende recargas, cobra servicios y agrega material gratis para tu negocio.</p><div class="register-logo-card"><img src="../assets/images/logo-papeamigos.png" alt="Papeamigos Papelerías"><strong>7% solo en recargas</strong><span>Servicios y material gratis disponibles</span></div></div>
-        <form id="registroForm" data-lead-form data-api-endpoint="/api/index.php">
+        <form id="registroForm" data-lead-form>
           <!-- El servidor PHP debe completar este valor con el token de la sesión. -->
           <input type="hidden" id="csrfTokenReg" name="csrfTokenReg" value="">
           <label>Nombre completo<input id="reg-name" type="text" name="nombre" maxlength="100" required></label>
@@ -33,4 +34,6 @@
     <script src="../script.js"></script>
   </body>
 </html>
+
+
 
