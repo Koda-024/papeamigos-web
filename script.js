@@ -30,18 +30,11 @@ if (leadForm) leadForm.addEventListener("submit", async (event) => {
   const comentarios = String(data.get("comentarios") || "").trim();
   const csrfToken = String(data.get("csrfTokenReg") || document.querySelector('meta[name="csrf-token"]')?.content || "").trim();
   const apiEndpoint = leadForm.dataset.apiEndpoint || document.querySelector('meta[name="registration-api"]')?.content || "";
-  const message = [
-    "Hola, escribo desde la página web PapeAmigos: https://papeamigos-web.vercel.app/",
-    `Nombre: ${nombre}`,
-    `Email: ${correo}`,
-    `Celular: ${telefono}`,
-    `Estado: ${estado}`,
-    `Comentarios: ${comentarios}`
-  ].join("\n");
 
-  // En Vercel no existe sesión PHP; se conserva el envío por WhatsApp.
+  // El registro funciona únicamente mediante la API; WhatsApp se usa solo para contacto.
   if (!apiEndpoint || !csrfToken) {
-    window.location.href = wa(message);
+    const unavailableStatus = leadForm.querySelector("[data-registration-status]");
+    if (unavailableStatus) unavailableStatus.textContent = "El registro automático se activará al conectar la API de Papeamigos.";
     return;
   }
 
