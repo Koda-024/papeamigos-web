@@ -27,7 +27,6 @@ if (leadForm) leadForm.addEventListener("submit", async (event) => {
   const correo = String(data.get("correo") || data.get("email") || "").trim();
   const telefono = String(data.get("telefono") || "").trim();
   const estado = String(data.get("estado") || "").trim();
-  const comentarios = String(data.get("comentarios") || "").trim();
   const csrfToken = String(data.get("csrfTokenReg") || document.querySelector('meta[name="csrf-token"]')?.content || "").trim();
   const apiEndpoint = leadForm.dataset.apiEndpoint || document.querySelector('meta[name="registration-api"]')?.content || "";
 

@@ -30,7 +30,6 @@ if (empty($_SESSION['csrf_token'])) {
           <label>Email<input id="reg-email" type="email" name="correo" maxlength="100" required></label>
           <label>Celular (10 dígitos)<input id="reg-phone" type="tel" name="telefono" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required></label>
           <label>Estado de residencia<select id="reg-estado" name="estado" required><option value="">Seleccione uno...</option><option>Aguascalientes</option><option>Baja California</option><option>Baja California Sur</option><option>Campeche</option><option>Chiapas</option><option>Chihuahua</option><option>Ciudad de México</option><option>Coahuila</option><option>Colima</option><option>Durango</option><option>Estado de México</option><option>Guanajuato</option><option>Guerrero</option><option>Hidalgo</option><option>Jalisco</option><option>Michoacán</option><option>Morelos</option><option>Nayarit</option><option>Nuevo León</option><option>Oaxaca</option><option>Puebla</option><option>Querétaro</option><option>Quintana Roo</option><option>San Luis Potosí</option><option>Sinaloa</option><option>Sonora</option><option>Tabasco</option><option>Tamaulipas</option><option>Tlaxcala</option><option>Veracruz</option><option>Yucatán</option><option>Zacatecas</option></select></label>
-          <label>Comentarios<textarea name="comentarios" rows="4"></textarea></label>
           <button class="btn primary" id="btnSubmitRegistro" type="submit">Enviar Datos</button>
           <p data-registration-status role="status" aria-live="polite"></p>
         </form>
