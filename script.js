@@ -1,4 +1,4 @@
-﻿const WHATSAPP_NUMBER = "525531185995";
+const WHATSAPP_NUMBER = "525531185995";
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
 const whatsappLinks = document.querySelectorAll("[data-whatsapp-link], [data-footer-whatsapp], [data-whatsapp-contact]");
@@ -30,36 +30,32 @@ function showRegistrationResult({ exito, usuario, contrasena, concepto }) {
   const panel = document.querySelector("[data-registration-result]");
   const userBox = document.querySelector("[data-result-user]");
   const passBox = document.querySelector("[data-result-pass]");
-  const conceptBox = document.querySelector("[data-result-concept]");
-  const messageBox = document.querySelector("[data-result-message]");
   const copyButton = document.querySelector("[data-copy-result]");
+  const acceptButton = document.querySelector("[data-accept-result]");
   const message = buildWelcomeMessage({ usuario, contrasena, concepto });
 
-  if (!panel || !userBox || !passBox || !messageBox) {
+  if (!panel || !userBox || !passBox) {
     window.alert(message);
     return;
   }
 
   userBox.textContent = usuario;
   passBox.textContent = contrasena;
-  if (conceptBox) {
-    const conceptWrap = conceptBox.closest(".concept-box");
-    conceptBox.textContent = concepto || "Pendiente de confirmar";
-    if (conceptWrap) conceptWrap.classList.toggle("is-pending", !concepto);
-  }
-  messageBox.value = message;
   panel.hidden = false;
-  panel.scrollIntoView({ behavior: "smooth", block: "center" });
 
   if (copyButton) {
     copyButton.onclick = async () => {
       await navigator.clipboard.writeText(message);
-      copyButton.textContent = "Mensaje copiado";
-      setTimeout(() => { copyButton.textContent = "Copiar mensaje"; }, 1800);
+      copyButton.textContent = "Copiado";
+      setTimeout(() => { copyButton.textContent = "Copiar"; }, 1800);
     };
   }
-}
 
+  if (acceptButton) {
+    acceptButton.onclick = () => { window.location.href = "https://papeamigos.com/"; };
+    acceptButton.focus();
+  }
+}
 if (leadForm) leadForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!leadForm.reportValidity()) return;

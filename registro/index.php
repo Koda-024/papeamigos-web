@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 if (empty($_SESSION['csrf_token'])) {
   $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -35,6 +35,19 @@ if (empty($_SESSION['csrf_token'])) {
         </form>
       </section>
     </main>
+    <section class="success-modal" data-registration-result hidden aria-live="polite" role="dialog" aria-modal="true">
+      <div class="success-card">
+        <div class="success-check" aria-hidden="true">✓</div>
+        <h2>Cuenta creada exitosamente</h2>
+        <p><strong>Usuario:</strong> <span data-result-user></span></p>
+        <p><strong>Contraseña:</strong> <span data-result-pass></span></p>
+        <p class="success-note">Anota en un lugar seguro estos datos, te enviamos un correo de bienvenida.</p>
+        <div class="success-actions">
+          <button class="btn secondary" type="button" data-copy-result>Copiar</button>
+          <button class="btn primary" type="button" data-accept-result>OK</button>
+        </div>
+      </div>
+    </section>
     <a class="whatsapp" href="#" data-whatsapp-link aria-label="Contactar por WhatsApp"><img src="../assets/images/whatsapp-logo.svg" alt="WhatsApp"></a>
     <script src="../script.js"></script>
   </body>
