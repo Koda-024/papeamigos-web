@@ -372,3 +372,26 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 [data-registration-status]:empty { display: none; }
 #btnSubmitRegistro:disabled { cursor: wait; opacity: .72; }
 
+
+.registration-result {
+  grid-column: 2;
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  background: rgba(255,255,255,.97);
+  color: var(--dark);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.registration-result[hidden] { display: none; }
+.registration-result h2 { margin-bottom: 0; font-size: clamp(1.6rem, 3vw, 2.35rem); }
+.registration-result p { margin-bottom: 0; }
+.credential-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.credential-grid div, .concept-box { padding: 16px; background: #fff4bd; border: 2px solid var(--yellow); border-radius: var(--radius); }
+.credential-grid span, .concept-box span { display: block; margin-bottom: 4px; color: #b92d45; font-weight: 900; text-transform: uppercase; font-size: .78rem; }
+.credential-grid strong, .concept-box strong { display: block; color: var(--dark); font-size: clamp(1.25rem, 2.2vw, 1.75rem); overflow-wrap: anywhere; }
+.registration-result textarea { width: 100%; min-height: 210px; background: #fbfcff; color: var(--dark); font-weight: 700; }
+@media (max-width: 900px) { .registration-result { grid-column: 1; } .credential-grid { grid-template-columns: 1fr; } }
+.concept-box.is-pending { background: #fbfcff; border-color: var(--line); }
+.concept-box.is-pending strong { color: var(--muted); font-size: 1.05rem; }

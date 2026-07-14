@@ -7,11 +7,57 @@ const leadForm = document.querySelector("[data-lead-form]");
 function wa(message) { return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`; }
 whatsappLinks.forEach((link) => { link.href = wa(WHATSAPP_MESSAGE); link.target = "_blank"; link.rel = "noopener"; });
 if (menuToggle && nav) menuToggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); menuToggle.setAttribute("aria-expanded", String(open)); });
-function showRegistrationResult({ exito, usuario, contrasena }) {
-  const message = `${exito}\n\nUsuario: ${usuario}\nContraseña: ${contrasena}`;
-  window.alert(message);
-  const params = new URLSearchParams({ usuario, contrasena, bienvenido: "1" });
-  window.location.href = `/?${params.toString()}`;
+function buildWelcomeMessage({ usuario, contrasena, concepto }) {
+  const paymentLine = concepto ? `Al transferir, pon en concepto:\n${concepto}` : "Antes de transferir, confirma el concepto o referencia de activación.";
+  return `¡Listo, bienvenido a Papeamigos! Aquí le paso su usuario y contraseña:
+
+Usuario: ${usuario}
+Contraseña: ${contrasena}
+
+3 pasos para comenzar:
+
+1. Ingresa a la plataforma con tu Usuario y Contraseña:
+https://papeamigos.com/
+
+2. Activa tu cuenta comprando saldo. ${paymentLine}
+
+3. Dentro de la plataforma podrás vender recargas, cobrar servicios, vender tarjetas de regalo y acceder al material gratuito.
+
+Recuerda: el 7% aplica solo en recargas.`;
+}
+
+function showRegistrationResult({ exito, usuario, contrasena, concepto }) {
+  const panel = document.querySelector("[data-registration-result]");
+  const userBox = document.querySelector("[data-result-user]");
+  const passBox = document.querySelector("[data-result-pass]");
+  const conceptBox = document.querySelector("[data-result-concept]");
+  const messageBox = document.querySelector("[data-result-message]");
+  const copyButton = document.querySelector("[data-copy-result]");
+  const message = buildWelcomeMessage({ usuario, contrasena, concepto });
+
+  if (!panel || !userBox || !passBox || !messageBox) {
+    window.alert(message);
+    return;
+  }
+
+  userBox.textContent = usuario;
+  passBox.textContent = contrasena;
+  if (conceptBox) {
+    const conceptWrap = conceptBox.closest(".concept-box");
+    conceptBox.textContent = concepto || "Pendiente de confirmar";
+    if (conceptWrap) conceptWrap.classList.toggle("is-pending", !concepto);
+  }
+  messageBox.value = message;
+  panel.hidden = false;
+  panel.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  if (copyButton) {
+    copyButton.onclick = async () => {
+      await navigator.clipboard.writeText(message);
+      copyButton.textContent = "Mensaje copiado";
+      setTimeout(() => { copyButton.textContent = "Copiar mensaje"; }, 1800);
+    };
+  }
 }
 
 if (leadForm) leadForm.addEventListener("submit", async (event) => {
@@ -146,6 +192,8 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     history.replaceState(null, '', location.pathname + location.search);
   });
 });
+
+
 
 
 

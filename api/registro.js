@@ -78,14 +78,16 @@ module.exports = async function handler(req, res) {
     const exito = xmlValue(inner, "Exito");
     const usuario = xmlValue(inner, "Usuario");
     const contrasena = xmlValue(inner, "Contrasena");
+    const concepto = xmlValue(inner, "Concepto") || xmlValue(inner, "Referencia") || xmlValue(inner, "Referenciapago");
     if (!exito || !usuario || !contrasena) {
       return res.status(502).json({ error: "Respuesta incompleta de Papeamigos." });
     }
 
-    return res.status(200).json({ exito, usuario, contrasena });
+    return res.status(200).json({ exito, usuario, contrasena, concepto });
   } catch (error) {
     return res.status(500).json({ error: "No se pudo procesar el registro." });
   }
 };
+
 
 

@@ -27,12 +27,25 @@
           <button class="btn primary" id="btnSubmitRegistro" type="submit">Enviar Datos</button>
           <p data-registration-status role="status" aria-live="polite"></p>
         </form>
+        <section class="registration-result" data-registration-result hidden aria-live="polite">
+          <p class="tag">Cuenta creada</p>
+          <h2>Bienvenido a Papeamigos</h2>
+          <p>Guarda estos datos para entrar a la plataforma.</p>
+          <div class="credential-grid">
+            <div><span>Usuario</span><strong data-result-user></strong></div>
+            <div><span>Contraseña</span><strong data-result-pass></strong></div>
+          </div>
+          <div class="concept-box"><span>Concepto para pago</span><strong data-result-concept></strong></div>
+          <textarea data-result-message readonly rows="11"></textarea>
+          <button class="btn primary" type="button" data-copy-result>Copiar mensaje</button>
+        </section>
       </section>
     </main>
     <a class="whatsapp" href="#" data-whatsapp-link aria-label="Contactar por WhatsApp"><img src="../assets/images/whatsapp-logo.svg" alt="WhatsApp"></a>
     <script src="../script.js"></script>
   </body>
 </html>
+
 
 
 
