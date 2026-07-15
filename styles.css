@@ -439,6 +439,10 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
+.success-brand-card { position: relative; display: grid; place-items: center; width: min(390px, 100%); height: clamp(86px, 16vw, 108px); margin: 0 auto 28px; overflow: hidden; background: #fff4bd; border: 2px solid #ffcc14; border-radius: 16px; box-shadow: 0 12px 28px rgba(23, 32, 51, .08); }
+.success-brand-card::after { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.34); }
+.success-brand-pattern { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.success-brand-logo { position: relative; z-index: 1; width: min(170px, 70%); max-height: 72px; object-fit: contain; padding: 10px 16px; background: rgba(255,255,255,.9); border-radius: 14px; box-shadow: 0 8px 20px rgba(23, 32, 51, .12); }
 .success-check {
   display: inline-flex;
   align-items: center;
@@ -453,8 +457,6 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   line-height: 1;
   font-weight: 300;
 }
-.success-banner { margin: calc(clamp(34px, 7vw, 66px) * -1) calc(clamp(22px, 6vw, 56px) * -1) 26px; }
-.success-banner img { width: 100%; height: clamp(86px, 16vw, 145px); object-fit: cover; object-position: center; }
 .success-card h2 {
   margin-bottom: 24px;
   color: #3f434d;
@@ -497,8 +499,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-  .success-banner { margin: -34px -20px 22px; }
-  .success-banner img { height: 92px; }
+  .success-brand-card { height: 86px; margin: 24px auto 22px; }
+  .success-brand-logo { width: min(150px, 72%); }
 .success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
