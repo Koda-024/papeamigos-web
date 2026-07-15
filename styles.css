@@ -426,19 +426,25 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 }
 .success-close {
   position: absolute;
-  top: 26px;
-  right: 26px;
-  width: 38px;
-  height: 38px;
-  border: 0;
+  top: 16px;
+  right: 16px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(96,101,117,.18);
   border-radius: 999px;
-  background: #f2f3f6;
-  color: #565b65;
-  font-size: 1.7rem;
+  background: #fff;
+  color: #606575;
+  font-size: 27px;
+  font-weight: 700;
   line-height: 1;
+  box-shadow: 0 8px 20px rgba(33,38,50,.14);
   cursor: pointer;
 }
-.success-close:hover { background: #e6e8ee; }
+.success-close:hover { background: #f0f1f5; }
 .success-banner-img { width: calc(100% + 40px); max-width: none; height: 86px; object-fit: cover; object-position: center; margin: 42px -20px 30px; border-radius: 14px; }
 .success-check {
   display: inline-flex;
@@ -464,7 +470,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .success-card strong { color: #4a4f59; }
 .success-login a { color: #139a56; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
 .success-help { margin-bottom: 12px !important; }
-.whatsapp-modal { display: inline-flex; width: auto; min-width: 132px; margin: 2px auto 0; background: #18a85f; color: #fff; box-shadow: none; }
+.whatsapp-modal { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: auto; min-width: 148px; margin: 2px auto 0; background: #18a85f; color: #fff; box-shadow: none; }
+.whatsapp-modal img { width: 22px; height: 22px; display: block; }
 .success-note { margin-top: 26px; }
 .success-actions { display: flex; justify-content: center; gap: 14px; margin-top: 38px; }
 .success-actions .btn {
@@ -483,19 +490,25 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   overflow: hidden; padding: 34px 20px 30px; }
   .success-close {
   position: absolute;
-  top: 26px;
-  right: 26px;
-  width: 38px;
-  height: 38px;
-  border: 0;
+  top: 16px;
+  right: 16px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(96,101,117,.18);
   border-radius: 999px;
-  background: #f2f3f6;
-  color: #565b65;
-  font-size: 1.7rem;
+  background: #fff;
+  color: #606575;
+  font-size: 27px;
+  font-weight: 700;
   line-height: 1;
+  box-shadow: 0 8px 20px rgba(33,38,50,.14);
   cursor: pointer;
 }
-.success-close:hover { background: #e6e8ee; }
+.success-close:hover { background: #f0f1f5; }
   .success-banner-img { width: calc(100% + 24px); max-width: none; height: 62px; margin: 46px -12px 22px; }
 .success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
