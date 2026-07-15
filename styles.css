@@ -415,6 +415,7 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .success-modal.is-opening .success-card { animation: modalPopIn .28s ease-out both; }
 .success-card {
   position: relative;
+  overflow: hidden;
   width: min(100%, 620px);
   padding: clamp(34px, 7vw, 66px) clamp(22px, 6vw, 56px) clamp(28px, 6vw, 46px);
   background: #fff;
@@ -452,6 +453,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   line-height: 1;
   font-weight: 300;
 }
+.success-banner { margin: calc(clamp(34px, 7vw, 66px) * -1) calc(clamp(22px, 6vw, 56px) * -1) 26px; }
+.success-banner img { width: 100%; height: clamp(86px, 16vw, 145px); object-fit: cover; object-position: center; }
 .success-card h2 {
   margin-bottom: 24px;
   color: #3f434d;
@@ -477,7 +480,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 }
 @media (max-width: 620px) {
   .success-card {
-  position: relative; padding: 34px 20px 30px; }
+  position: relative;
+  overflow: hidden; padding: 34px 20px 30px; }
   .success-close {
   position: absolute;
   top: 14px;
@@ -493,6 +497,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
+  .success-banner { margin: -34px -20px 22px; }
+  .success-banner img { height: 92px; }
 .success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
