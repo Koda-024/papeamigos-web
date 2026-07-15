@@ -7,6 +7,23 @@ const leadForm = document.querySelector("[data-lead-form]");
 function wa(message) { return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`; }
 whatsappLinks.forEach((link) => { link.href = wa(WHATSAPP_MESSAGE); link.target = "_blank"; link.rel = "noopener"; });
 if (menuToggle && nav) menuToggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); menuToggle.setAttribute("aria-expanded", String(open)); });
+function resetRegistrationForm() {
+  if (leadForm) leadForm.reset();
+  const status = leadForm?.querySelector("[data-registration-status]");
+  if (status) status.textContent = "";
+}
+
+function closeRegistrationResult() {
+  const panel = document.querySelector("[data-registration-result]");
+  if (panel) {
+    panel.hidden = true;
+    panel.classList.remove("is-opening");
+  }
+  resetRegistrationForm();
+}
+
+window.addEventListener("pagehide", resetRegistrationForm);
+window.addEventListener("beforeunload", resetRegistrationForm);
 function buildWelcomeMessage({ usuario, contrasena, concepto }) {
   const paymentLine = concepto ? `Al transferir, pon en concepto:\n${concepto}` : "Antes de transferir, confirma el concepto o referencia de activación.";
   return `Cuenta creada exitosamente
@@ -31,6 +48,7 @@ function showRegistrationResult({ exito, usuario, contrasena, concepto }) {
   const passBox = document.querySelector("[data-result-pass]");
   const copyButton = document.querySelector("[data-copy-result]");
   const acceptButton = document.querySelector("[data-accept-result]");
+  const closeButton = document.querySelector("[data-close-result]");
   const message = buildWelcomeMessage({ usuario, contrasena, concepto });
 
   if (!panel || !userBox || !passBox) {
@@ -54,9 +72,11 @@ function showRegistrationResult({ exito, usuario, contrasena, concepto }) {
   }
 
   if (acceptButton) {
-    acceptButton.onclick = () => { window.location.href = "https://papeamigos.com/"; };
+    acceptButton.onclick = () => { window.open("https://papeamigos.com/", "_blank", "noopener"); closeRegistrationResult(); };
     acceptButton.focus();
   }
+
+  if (closeButton) closeButton.onclick = closeRegistrationResult;
 }
 if (leadForm) leadForm.addEventListener("submit", async (event) => {
   event.preventDefault();

@@ -32,6 +32,7 @@
     </main>
     <section class="success-modal" data-registration-result hidden aria-live="polite" role="dialog" aria-modal="true">
       <div class="success-card">
+        <button class="success-close" type="button" data-close-result aria-label="Cerrar">×</button>
         <div class="success-check" aria-hidden="true">✓</div>
         <h2>Cuenta creada exitosamente</h2>
         <p class="success-login">Ingresa a: <a href="https://papeamigos.com/" target="_blank" rel="noopener">papeamigos.com</a></p>
@@ -39,7 +40,10 @@
         <p><strong>Contraseña:</strong> <span data-result-pass></span></p>
         <p class="success-note">Guarda estos datos en un lugar seguro.</p>
         <p class="success-help">Si tienes dudas, escríbenos por WhatsApp.</p>
-        <a class="btn whatsapp-modal" href="#" data-modal-whatsapp>WhatsApp</a>
+        <div class="success-link-actions">
+          <a class="btn whatsapp-modal" href="#" data-modal-whatsapp>WhatsApp</a>
+          <a class="btn app-modal" href="https://play.google.com/store/apps/details?id=com.papeamigos.recargasmultimarca&pcampaignid=web_share" target="_blank" rel="noopener">App Android</a>
+        </div>
         <div class="success-actions">
           <button class="btn secondary" type="button" data-copy-result>Copiar</button>
           <button class="btn primary" type="button" data-accept-result>OK</button>
