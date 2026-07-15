@@ -426,8 +426,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 }
 .success-close {
   position: absolute;
-  top: 24px;
-  right: 22px;
+  top: 18px;
+  right: 18px;
   width: 38px;
   height: 38px;
   border: 0;
@@ -439,7 +439,7 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-.success-banner-img { width: calc(100% + 40px); max-width: none; height: 86px; object-fit: cover; object-position: center; margin: 8px -20px 24px; border-radius: 14px; }
+.success-banner-img { width: calc(100% + 40px); max-width: none; height: 86px; object-fit: cover; object-position: center; margin: 18px -20px 26px; border-radius: 14px; }
 .success-check {
   display: inline-flex;
   align-items: center;
@@ -465,7 +465,7 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .success-login a { color: #139a56; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
 .success-help { margin-bottom: 12px !important; }
 .whatsapp-modal { display: inline-flex; width: auto; min-width: 132px; margin: 2px auto 0; background: #18a85f; color: #fff; box-shadow: none; }
-.success-note { margin-top: 24px; }
+.success-note { margin-top: 18px; }
 .success-actions { display: flex; justify-content: center; gap: 14px; margin-top: 38px; }
 .success-actions .btn {
   width: auto;
@@ -483,8 +483,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   overflow: hidden; padding: 34px 20px 30px; }
   .success-close {
   position: absolute;
-  top: 24px;
-  right: 22px;
+  top: 18px;
+  right: 18px;
   width: 38px;
   height: 38px;
   border: 0;
@@ -496,7 +496,7 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-  .success-banner-img { width: calc(100% + 24px); max-width: none; height: 62px; margin: 18px -12px 20px; }
+  .success-banner-img { width: calc(100% + 24px); max-width: none; height: 62px; margin: 24px -12px 20px; }
 .success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
