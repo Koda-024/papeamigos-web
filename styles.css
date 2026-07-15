@@ -439,7 +439,6 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-.success-top-logo { width: min(170px, 58%); max-height: 88px; object-fit: contain; margin: 0 auto 26px; padding: 10px; background: #fff; border-radius: 14px; box-shadow: 0 10px 24px rgba(23, 32, 51, .08); }
 .success-check {
   display: inline-flex;
   align-items: center;
@@ -496,8 +495,7 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-  .success-top-logo { width: min(145px, 62%); max-height: 76px; margin-bottom: 20px; }
-.success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
+  .success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
 }
