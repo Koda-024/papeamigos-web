@@ -41,6 +41,9 @@ function showRegistrationResult({ exito, usuario, contrasena, concepto }) {
   userBox.textContent = usuario;
   passBox.textContent = contrasena;
   panel.hidden = false;
+  panel.classList.remove("is-opening");
+  void panel.offsetWidth;
+  panel.classList.add("is-opening");
 
   if (copyButton) {
     copyButton.onclick = async () => {
