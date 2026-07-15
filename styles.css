@@ -438,7 +438,16 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-.success-check {
+.success-banner-img {
+  display: block;
+  width: min(86%, 520px);
+  height: 78px;
+  object-fit: cover;
+  object-position: center;
+  margin: 12px auto 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(255,74,74,.14);
+}.success-check {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -493,7 +502,16 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-.success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
+.success-banner-img {
+  display: block;
+  width: min(86%, 520px);
+  height: 78px;
+  object-fit: cover;
+  object-position: center;
+  margin: 12px auto 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(255,74,74,.14);
+}.success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
 }
