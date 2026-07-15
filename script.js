@@ -1,7 +1,7 @@
 const WHATSAPP_NUMBER = "525531185995";
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
-const whatsappLinks = document.querySelectorAll("[data-whatsapp-link], [data-footer-whatsapp], [data-whatsapp-contact]");
+const whatsappLinks = document.querySelectorAll("[data-whatsapp-link], [data-footer-whatsapp], [data-whatsapp-contact], [data-modal-whatsapp]");
 const WHATSAPP_MESSAGE = "Hola, escribo desde la página web PapeAmigos:\nhttps://papeamigos-web.vercel.app/";
 const leadForm = document.querySelector("[data-lead-form]");
 function wa(message) { return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`; }
@@ -9,21 +9,20 @@ whatsappLinks.forEach((link) => { link.href = wa(WHATSAPP_MESSAGE); link.target 
 if (menuToggle && nav) menuToggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); menuToggle.setAttribute("aria-expanded", String(open)); });
 function buildWelcomeMessage({ usuario, contrasena, concepto }) {
   const paymentLine = concepto ? `Al transferir, pon en concepto:\n${concepto}` : "Antes de transferir, confirma el concepto o referencia de activación.";
-  return `¡Listo, bienvenido a Papeamigos! Aquí le paso su usuario y contraseña:
+  return `Cuenta creada exitosamente
+
+Ingresa a:
+https://papeamigos.com/
 
 Usuario: ${usuario}
 Contraseña: ${contrasena}
 
-3 pasos para comenzar:
+Guarda estos datos en un lugar seguro.
 
-1. Ingresa a la plataforma con tu Usuario y Contraseña:
-https://papeamigos.com/
+Si tienes dudas, escríbenos por WhatsApp:
+55 3118 5995
 
-2. Activa tu cuenta comprando saldo. ${paymentLine}
-
-3. Dentro de la plataforma podrás vender recargas, cobrar servicios, vender tarjetas de regalo y acceder al material gratuito.
-
-Recuerda: el 7% aplica solo en recargas.`;
+${paymentLine}`;
 }
 
 function showRegistrationResult({ exito, usuario, contrasena, concepto }) {

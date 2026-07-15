@@ -414,6 +414,9 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 }
 .success-card p { margin-bottom: 18px; color: #565b65; font-size: 1.05rem; }
 .success-card strong { color: #4a4f59; }
+.success-login a { color: #139a56; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
+.success-help { margin-bottom: 12px !important; }
+.whatsapp-modal { display: inline-flex; width: auto; min-width: 132px; margin: 2px auto 0; background: #18a85f; color: #fff; box-shadow: none; }
 .success-note { margin-top: 24px; }
 .success-actions { display: flex; justify-content: center; gap: 14px; margin-top: 38px; }
 .success-actions .btn {
