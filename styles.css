@@ -477,3 +477,5 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
 }
+
+.app-modal[hidden] { display: none; }

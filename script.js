@@ -49,6 +49,7 @@ function showRegistrationResult({ exito, usuario, contrasena, concepto }) {
   const copyButton = document.querySelector("[data-copy-result]");
   const acceptButton = document.querySelector("[data-accept-result]");
   const closeButton = document.querySelector("[data-close-result]");
+  const appButton = document.querySelector("[data-app-android]");
   const message = buildWelcomeMessage({ usuario, contrasena, concepto });
 
   if (!panel || !userBox || !passBox) {
@@ -58,6 +59,7 @@ function showRegistrationResult({ exito, usuario, contrasena, concepto }) {
 
   userBox.textContent = usuario;
   passBox.textContent = contrasena;
+  if (appButton) appButton.hidden = !/Android/i.test(navigator.userAgent);
   panel.hidden = false;
   panel.classList.remove("is-opening");
   void panel.offsetWidth;

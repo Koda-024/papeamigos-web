@@ -47,7 +47,7 @@ if (empty($_SESSION['csrf_token'])) {
         <p class="success-help">Si tienes dudas, escríbenos por WhatsApp.</p>
         <div class="success-link-actions">
           <a class="btn whatsapp-modal" href="#" data-modal-whatsapp>WhatsApp</a>
-          <a class="btn app-modal" href="https://play.google.com/store/apps/details?id=com.papeamigos.recargasmultimarca&pcampaignid=web_share" target="_blank" rel="noopener">App Android</a>
+          <a class="btn app-modal" data-app-android hidden href="https://play.google.com/store/apps/details?id=com.papeamigos.recargasmultimarca&pcampaignid=web_share" target="_blank" rel="noopener">App Android</a>
         </div>
         <div class="success-actions">
           <button class="btn secondary" type="button" data-copy-result>Copiar</button>
