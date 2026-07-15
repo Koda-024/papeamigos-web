@@ -231,10 +231,10 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .footer a:hover { color: var(--yellow); }
 .footer-phone { font-size: 1.35rem; font-weight: 900; color: #fff !important; }
 .footer-whatsapp { display: inline-flex !important; width: fit-content; margin-top: 10px !important; padding: 12px 16px; background: #18a85f; border-radius: var(--radius); color: #fff !important; text-decoration: none !important; font-weight: 900; }
-.footer-copy { margin-top: 38px !important; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.12); text-align: center; font-size: .9rem; }
+.footer-copy { margin-top: 38px !important; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); text-align: center; font-size: .9rem; }
 @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .footer { padding: 42px 18px 18px; } .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
-.whatsapp { position: fixed; right: 26px; bottom: 18px; display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; background: #1e955d; border-radius: 999px; box-shadow: 0 14px 28px rgba(30, 149, 93, .35); }
+.whatsapp { position: fixed; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; background: #1e955d; border-radius: 999px; box-shadow: 0 14px 28px rgba(30, 149, 93, .35); }
 .whatsapp img { width: 32px; height: 32px; }
 
 @media (max-width: 1100px) {
@@ -370,7 +370,7 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 
 
 
-.service-example { display: grid; gap: 8px; max-width: 560px; margin-top: 26px; padding: 18px; background: #fff8d8; border: 1px solid #ffcc14; border-radius: var(--radius); }
+.service-example { display: grid; gap: 8px; max-width: 560px; margin-top: 18px; padding: 18px; background: #fff8d8; border: 1px solid #ffcc14; border-radius: var(--radius); }
 .service-example strong { color: #b92d45; font-size: 1.08rem; }
 .service-example span { color: var(--dark); font-weight: 800; }
 @media (max-width: 620px) { .service-example { padding: 14px; } }
@@ -415,7 +415,6 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .success-modal.is-opening .success-card { animation: modalPopIn .28s ease-out both; }
 .success-card {
   position: relative;
-  overflow: hidden;
   width: min(100%, 620px);
   padding: clamp(34px, 7vw, 66px) clamp(22px, 6vw, 56px) clamp(28px, 6vw, 46px);
   background: #fff;
@@ -426,26 +425,19 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 }
 .success-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 30;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid rgba(96,101,117,.18);
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border: 0;
   border-radius: 999px;
-  background: #fff;
-  color: #606575;
-  font-size: 27px;
-  font-weight: 700;
+  background: #f2f3f6;
+  color: #565b65;
+  font-size: 1.7rem;
   line-height: 1;
-  box-shadow: 0 8px 20px rgba(33,38,50,.14);
   cursor: pointer;
 }
-.success-close:hover { background: #f0f1f5; }
-.success-banner-img { width: calc(100% + 40px); max-width: none; height: 86px; object-fit: cover; object-position: center; margin: 42px -20px 30px; border-radius: 14px; }
+.success-close:hover { background: #e6e8ee; }
 .success-check {
   display: inline-flex;
   align-items: center;
@@ -470,9 +462,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .success-card strong { color: #4a4f59; }
 .success-login a { color: #139a56; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
 .success-help { margin-bottom: 12px !important; }
-.whatsapp-modal { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: auto; min-width: 148px; margin: 2px auto 0; background: #18a85f; color: #fff; box-shadow: none; }
-.whatsapp-modal img { width: 22px; height: 22px; display: block; }
-.success-note { margin-top: 26px; }
+.whatsapp-modal { display: inline-flex; width: auto; min-width: 132px; margin: 2px auto 0; background: #18a85f; color: #fff; box-shadow: none; }
+.success-note { margin-top: 24px; }
 .success-actions { display: flex; justify-content: center; gap: 14px; margin-top: 38px; }
 .success-actions .btn {
   width: auto;
@@ -486,30 +477,22 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 }
 @media (max-width: 620px) {
   .success-card {
-  position: relative;
-  overflow: hidden; padding: 34px 20px 30px; }
+  position: relative; padding: 34px 20px 30px; }
   .success-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 30;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid rgba(96,101,117,.18);
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border: 0;
   border-radius: 999px;
-  background: #fff;
-  color: #606575;
-  font-size: 27px;
-  font-weight: 700;
+  background: #f2f3f6;
+  color: #565b65;
+  font-size: 1.7rem;
   line-height: 1;
-  box-shadow: 0 8px 20px rgba(33,38,50,.14);
   cursor: pointer;
 }
-.success-close:hover { background: #f0f1f5; }
-  .success-banner-img { width: calc(100% + 24px); max-width: none; height: 62px; margin: 46px -12px 22px; }
+.success-close:hover { background: #e6e8ee; }
 .success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
