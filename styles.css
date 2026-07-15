@@ -439,7 +439,7 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-.success-banner-img { width: min(540px, 92%); height: 86px; object-fit: cover; object-position: center; margin: 8px auto 24px; border-radius: 14px; }
+.success-banner-img { width: calc(100% + 40px); max-width: none; height: 86px; object-fit: cover; object-position: center; margin: 8px -20px 24px; border-radius: 14px; }
 .success-check {
   display: inline-flex;
   align-items: center;
@@ -496,7 +496,7 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   cursor: pointer;
 }
 .success-close:hover { background: #e6e8ee; }
-  .success-banner-img { width: min(340px, 94%); height: 62px; margin: 18px auto 20px; }
+  .success-banner-img { width: calc(100% + 24px); max-width: none; height: 62px; margin: 18px -12px 20px; }
 .success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
