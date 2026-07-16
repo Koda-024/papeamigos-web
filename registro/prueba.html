@@ -11,6 +11,7 @@
     .test-panel img { width: 130px; margin-bottom: 14px; }
     .test-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     .success-modal { position: fixed; }
+    .success-modal.test-bg .success-card { background: linear-gradient(rgba(255,255,255,.90), rgba(255,255,255,.94)), url("../assets/images/modal-test-bg.png") center / cover no-repeat; }
   </style>
 </head>
 <body>
@@ -24,7 +25,7 @@
     </div>
   </main>
 
-  <section class="success-modal" data-success-modal hidden>
+  <section class="success-modal test-bg" data-success-modal hidden>
     <div class="success-card">
       <button class="success-close" type="button" data-close-result aria-label="Cerrar">×</button>
       <img class="success-brand-logo" src="../assets/images/logo-papeamigos.png" alt="Papeamigos Papelerías">
