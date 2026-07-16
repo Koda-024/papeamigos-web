@@ -412,17 +412,18 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 }
 .success-modal[hidden] { display: none; }
 .success-modal.is-opening { animation: modalFadeIn .24s ease-out both; }
-.success-modal.is-opening .success-card { animation: modalPopIn .28s ease-out both; }
-.success-card {
+.success-modal.is-opening .success-card {
   position: relative;
-  width: min(100%, 620px);
-  padding: clamp(34px, 7vw, 66px) clamp(22px, 6vw, 56px) clamp(28px, 6vw, 46px);
-  background: #fff;
+  width: min(100%, 560px);
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
+  padding: clamp(26px, 5vw, 44px) clamp(20px, 5vw, 46px) clamp(24px, 5vw, 38px);
+  background: linear-gradient(180deg, #fff 0%, #fffafa 100%);
   color: #474b55;
-  border: 2px solid rgba(255, 204, 20, .85);
-  border-radius: 10px;
+  border: 2px solid rgba(233, 62, 105, .35);
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 26px 84px rgba(0,0,0,.32), 0 0 0 6px rgba(255,204,20,.12), inset 0 0 0 1px rgba(255,255,255,.75);
+  box-shadow: 0 24px 76px rgba(0,0,0,.30), 0 0 0 6px rgba(233,62,105,.10), inset 0 0 0 1px rgba(255,255,255,.85);
 }
 .success-close {
   position: absolute;
@@ -441,41 +442,42 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .success-close:hover { background: #e6e8ee; }
 .success-brand-logo {
   display: block;
-  width: 100px;
-  max-height: 72px;
+  width: 96px;
+  max-height: 68px;
   object-fit: contain;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
   padding: 8px 14px;
   border-radius: 14px;
   background: #fff8d8;
   box-shadow: 0 8px 18px rgba(23,32,51,.06);
-} .success-check {
+}
+.success-check {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 118px;
-  height: 118px;
-  margin-bottom: 28px;
+  width: 104px;
+  height: 104px;
+  margin-bottom: 22px;
   color: #8bd87a;
   border: 6px solid #e7f7e2;
   border-radius: 999px;
-  font-size: 5rem;
+  font-size: 4.4rem;
   line-height: 1;
   font-weight: 300;
 }
 .success-card h2 {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   color: #3f434d;
   font-size: clamp(1.55rem, 4.2vw, 2rem);
   line-height: 1.2;
 }
-.success-card p { margin-bottom: 18px; color: #565b65; font-size: 1.05rem; }
+.success-card p { margin-bottom: 14px; color: #565b65; font-size: 1.05rem; }
 .success-card strong { color: #4a4f59; }
 .success-login a { color: #139a56; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
-.success-help { margin-bottom: 12px !important; }
+.success-help { margin-bottom: 10px !important; }
 .whatsapp-modal { display: inline-flex; width: auto; min-width: 132px; margin: 2px auto 0; background: #18a85f; color: #fff; box-shadow: none; }
-.success-note { margin-top: 24px; }
-.success-actions { display: flex; justify-content: center; gap: 14px; margin-top: 38px; }
+.success-note { margin-top: 18px; }
+.success-actions { display: flex; justify-content: center; gap: 14px; margin-top: 28px; }
 .success-actions .btn {
   width: auto;
   min-width: 96px;
@@ -487,36 +489,14 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   box-shadow: none;
 }
 @media (max-width: 620px) {
-  .success-card {
-  position: relative; padding: 34px 20px 30px; }
-  .success-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 38px;
-  height: 38px;
-  border: 0;
-  border-radius: 999px;
-  background: #f2f3f6;
-  color: #565b65;
-  font-size: 1.7rem;
-  line-height: 1;
-  cursor: pointer;
-}
-.success-close:hover { background: #e6e8ee; }
-.success-brand-logo {
-  display: block;
-  width: 100px;
-  max-height: 72px;
-  object-fit: contain;
-  margin: 0 auto 12px;
-  padding: 8px 14px;
-  border-radius: 14px;
-  background: #fff8d8;
-  box-shadow: 0 8px 18px rgba(23,32,51,.06);
-}.success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
-  .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .success-card { width: min(100%, 500px); max-height: calc(100vh - 18px); padding: 28px 18px 24px; }
+  .success-close { top: 12px; right: 12px; width: 36px; height: 36px; font-size: 1.55rem; }
+  .success-brand-logo { width: 84px; max-height: 60px; margin-bottom: 8px; padding: 7px 12px; }
+  .success-check { width: 84px; height: 84px; margin-bottom: 18px; font-size: 3.4rem; }
+  .success-card h2 { margin-bottom: 14px; }
+  .success-card p { margin-bottom: 12px; }
+  .success-note { margin-top: 14px; }
+  .success-actions { display: grid; grid-template-columns: 1fr 1fr; margin-top: 22px; }
   .success-actions .btn { min-width: 0; }
 }
-
 .app-modal[hidden] { display: none; }
