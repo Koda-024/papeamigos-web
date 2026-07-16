@@ -419,8 +419,8 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
   padding: clamp(34px, 7vw, 66px) clamp(22px, 6vw, 56px) clamp(28px, 6vw, 46px);
   background: #fff;
   color: #474b55;
-  border: 2px solid rgba(255, 204, 20, .75);
-  border-radius: 14px;
+  border: 1px solid rgba(255, 204, 20, .45);
+  border-radius: 8px;
   text-align: center;
   box-shadow: 0 24px 80px rgba(0,0,0,.28);
 }
@@ -441,21 +441,21 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .success-close:hover { background: #e6e8ee; }
 .success-brand-logo {
   display: block;
-  width: 104px;
-  max-height: 78px;
+  width: 82px;
+  max-height: 58px;
   object-fit: contain;
-  margin: 0 auto 22px;
-  padding: 10px 16px;
-  border-radius: 16px;
+  margin: 0 auto 14px;
+  padding: 7px 12px;
+  border-radius: 13px;
   background: #fff8d8;
-  box-shadow: 0 10px 24px rgba(23,32,51,.08);
-}.success-check {
+  box-shadow: 0 8px 18px rgba(23,32,51,.06);
+} .success-check {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 118px;
   height: 118px;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
   color: #8bd87a;
   border: 6px solid #e7f7e2;
   border-radius: 999px;
@@ -506,14 +506,14 @@ input, select, textarea { min-height: 44px; padding: 12px 14px; border: 1px soli
 .success-close:hover { background: #e6e8ee; }
 .success-brand-logo {
   display: block;
-  width: 104px;
-  max-height: 78px;
+  width: 82px;
+  max-height: 58px;
   object-fit: contain;
-  margin: 0 auto 22px;
-  padding: 10px 16px;
-  border-radius: 16px;
+  margin: 0 auto 14px;
+  padding: 7px 12px;
+  border-radius: 13px;
   background: #fff8d8;
-  box-shadow: 0 10px 24px rgba(23,32,51,.08);
+  box-shadow: 0 8px 18px rgba(23,32,51,.06);
 }.success-check { width: 92px; height: 92px; margin-bottom: 28px; font-size: 3.8rem; }
   .success-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .success-actions .btn { min-width: 0; }
