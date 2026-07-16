@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prueba de panel | Papeamigos</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #fff8fb; }
+    .test-panel { max-width: 520px; text-align: center; }
+    .test-panel img { width: 130px; margin-bottom: 14px; }
+    .test-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .success-modal { position: fixed; }
+  </style>
+</head>
+<body>
+  <main class="test-panel">
+    <img src="../assets/images/logo-papeamigos.png" alt="Papeamigos Papelerías">
+    <h1>Prueba del panel</h1>
+    <p>Esta pestaña solo simula la cuenta creada. No registra usuarios ni llama a la API.</p>
+    <div class="test-actions">
+      <button class="btn primary" type="button" data-open-test>Ver panel</button>
+      <a class="btn ghost" href="./">Volver al registro</a>
+    </div>
+  </main>
+
+  <section class="success-modal" data-success-modal hidden>
+    <div class="success-card">
+      <button class="success-close" type="button" data-close-result aria-label="Cerrar">×</button>
+      <img class="success-brand-logo" src="../assets/images/logo-papeamigos.png" alt="Papeamigos Papelerías">
+      <div class="success-check" aria-hidden="true">✓</div>
+      <h2>Cuenta creada exitosamente</h2>
+      <p class="success-login">Ingresa a: <a href="https://papeamigos.com/" target="_blank" rel="noopener">papeamigos.com</a></p>
+      <p><strong>Usuario:</strong> <span data-test-user></span></p>
+      <p><strong>Contraseña:</strong> <span data-test-pass></span></p>
+      <p class="success-note">Guarda estos datos en un lugar seguro.</p>
+      <p class="success-help">Si tienes dudas, escríbenos por WhatsApp.</p>
+      <div class="success-link-actions">
+        <a class="btn whatsapp-modal" href="https://wa.me/525531185995" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="success-actions">
+        <button class="btn" type="button" data-copy-test>Copiar</button>
+        <button class="btn primary" type="button" data-close-result>OK</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const modal = document.querySelector('[data-success-modal]');
+    const user = document.querySelector('[data-test-user]');
+    const pass = document.querySelector('[data-test-pass]');
+    function fakeData() {
+      user.textContent = Math.random().toString(16).slice(2, 12);
+      pass.textContent = Math.random().toString(36).slice(2, 6).toUpperCase() + '$' + Math.random().toString(36).slice(2, 5).toUpperCase();
+    }
+    function openPanel() { fakeData(); modal.hidden = false; modal.classList.add('is-opening'); }
+    function closePanel() { modal.hidden = true; modal.classList.remove('is-opening'); }
+    document.querySelector('[data-open-test]').onclick = openPanel;
+    document.querySelectorAll('[data-close-result]').forEach(btn => btn.onclick = closePanel);
+    document.querySelector('[data-copy-test]').onclick = async () => {
+      await navigator.clipboard.writeText(`Usuario: ${user.textContent}\nContraseña: ${pass.textContent}\nIngresa a: https://papeamigos.com/`);
+    };
+    openPanel();
+  </script>
+</body>
+</html>
